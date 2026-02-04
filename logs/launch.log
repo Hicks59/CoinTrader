@@ -1,0 +1,1119 @@
+[2026-01-31 03:41:33] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 03:41:33] [INFO] Vérification connexion base de données
+[2026-01-31 03:41:33] [INFO] Connexion base de données OK
+[2026-01-31 03:41:33] [INFO] Vérification tables de la base de données
+[2026-01-31 03:41:33] [WARNING] Tables manquantes: accounts, exchanges, api_keys, bots, orders
+[2026-01-31 03:41:33] [INFO] Initialisation de la base de données
+[2026-01-31 03:41:33] [INFO] Base de données initialisée avec succès
+[2026-01-31 03:41:33] [INFO] Vérification permissions dossiers logs
+[2026-01-31 03:41:33] [INFO] Permissions dossiers logs OK
+[2026-01-31 03:41:33] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 03:41:33] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 03:41:33] [INFO] Initialisation terminée avec succès
+[2026-01-31 03:41:33] [INFO] Application prête
+[2026-01-31 03:41:33] [INFO] Connexion base de données fermée
+[2026-01-31 03:41:33] [INFO] === FIN KIPACOIN ===
+[2026-01-31 03:43:44] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 03:43:44] [INFO] Vérification connexion base de données
+[2026-01-31 03:43:44] [INFO] Connexion base de données OK
+[2026-01-31 03:43:44] [INFO] Vérification tables de la base de données
+[2026-01-31 03:43:44] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 03:43:44] [INFO] Vérification permissions dossiers logs
+[2026-01-31 03:43:44] [INFO] Permissions dossiers logs OK
+[2026-01-31 03:43:44] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 03:43:44] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 03:43:44] [INFO] Initialisation terminée avec succès
+[2026-01-31 03:43:44] [INFO] Application prête
+[2026-01-31 03:43:47] [INFO] Connexion base de données fermée
+[2026-01-31 03:43:47] [INFO] === FIN KIPACOIN ===
+[2026-01-31 03:59:05] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 03:59:05] [INFO] Vérification connexion base de données
+[2026-01-31 03:59:05] [INFO] Connexion base de données OK
+[2026-01-31 03:59:05] [INFO] Vérification tables de la base de données
+[2026-01-31 03:59:05] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 03:59:05] [INFO] Vérification permissions dossiers logs
+[2026-01-31 03:59:05] [INFO] Permissions dossiers logs OK
+[2026-01-31 03:59:05] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 03:59:05] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 03:59:05] [INFO] Initialisation terminée avec succès
+[2026-01-31 03:59:05] [INFO] Application prête
+[2026-01-31 03:59:07] [INFO] Connexion base de données fermée
+[2026-01-31 03:59:07] [INFO] === FIN KIPACOIN ===
+[2026-01-31 03:59:26] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 03:59:26] [INFO] Vérification connexion base de données
+[2026-01-31 03:59:26] [INFO] Connexion base de données OK
+[2026-01-31 03:59:26] [INFO] Vérification tables de la base de données
+[2026-01-31 03:59:26] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 03:59:26] [INFO] Vérification permissions dossiers logs
+[2026-01-31 03:59:26] [INFO] Permissions dossiers logs OK
+[2026-01-31 03:59:26] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 03:59:26] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 03:59:26] [INFO] Initialisation terminée avec succès
+[2026-01-31 03:59:26] [INFO] Application prête
+[2026-01-31 04:00:19] [INFO] Connexion base de données fermée
+[2026-01-31 04:00:19] [INFO] === FIN KIPACOIN ===
+[2026-01-31 04:02:30] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 04:02:30] [INFO] Vérification connexion base de données
+[2026-01-31 04:02:30] [INFO] Connexion base de données OK
+[2026-01-31 04:02:30] [INFO] Vérification tables de la base de données
+[2026-01-31 04:02:30] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 04:02:30] [INFO] Vérification permissions dossiers logs
+[2026-01-31 04:02:30] [INFO] Permissions dossiers logs OK
+[2026-01-31 04:02:30] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 04:02:30] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 04:02:31] [INFO] Initialisation terminée avec succès
+[2026-01-31 04:02:31] [INFO] Application prête
+[2026-01-31 04:03:47] [INFO] Connexion base de données fermée
+[2026-01-31 04:03:47] [INFO] === FIN KIPACOIN ===
+[2026-01-31 04:03:57] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 04:03:57] [INFO] Vérification connexion base de données
+[2026-01-31 04:03:57] [INFO] Connexion base de données OK
+[2026-01-31 04:03:57] [INFO] Vérification tables de la base de données
+[2026-01-31 04:03:57] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 04:03:57] [INFO] Vérification permissions dossiers logs
+[2026-01-31 04:03:57] [INFO] Permissions dossiers logs OK
+[2026-01-31 04:03:57] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 04:03:57] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 04:03:57] [INFO] Initialisation terminée avec succès
+[2026-01-31 04:03:57] [INFO] Application prête
+[2026-01-31 04:04:19] [INFO] Connexion base de données fermée
+[2026-01-31 04:04:19] [INFO] === FIN KIPACOIN ===
+[2026-01-31 04:04:35] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 04:04:35] [INFO] Vérification connexion base de données
+[2026-01-31 04:04:35] [INFO] Connexion base de données OK
+[2026-01-31 04:04:35] [INFO] Vérification tables de la base de données
+[2026-01-31 04:04:35] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 04:04:35] [INFO] Vérification permissions dossiers logs
+[2026-01-31 04:04:35] [INFO] Permissions dossiers logs OK
+[2026-01-31 04:04:35] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 04:04:35] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 04:04:35] [INFO] Initialisation terminée avec succès
+[2026-01-31 04:04:35] [INFO] Application prête
+[2026-01-31 04:05:23] [INFO] Connexion base de données fermée
+[2026-01-31 04:05:23] [INFO] === FIN KIPACOIN ===
+[2026-01-31 04:19:28] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 04:19:28] [INFO] Vérification connexion base de données
+[2026-01-31 04:19:28] [INFO] Connexion base de données OK
+[2026-01-31 04:19:28] [INFO] Vérification tables de la base de données
+[2026-01-31 04:19:28] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 04:19:28] [INFO] Vérification permissions dossiers logs
+[2026-01-31 04:19:28] [INFO] Permissions dossiers logs OK
+[2026-01-31 04:19:28] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 04:19:28] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 04:19:28] [INFO] Initialisation terminée avec succès
+[2026-01-31 04:19:28] [INFO] Application prête
+[2026-01-31 12:17:30] [INFO] Connexion base de données fermée
+[2026-01-31 12:17:30] [INFO] === FIN KIPACOIN ===
+[2026-01-31 12:17:56] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 12:17:56] [INFO] Vérification connexion base de données
+[2026-01-31 12:17:56] [INFO] Connexion base de données OK
+[2026-01-31 12:17:56] [INFO] Vérification tables de la base de données
+[2026-01-31 12:17:56] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 12:17:56] [INFO] Vérification permissions dossiers logs
+[2026-01-31 12:17:56] [INFO] Permissions dossiers logs OK
+[2026-01-31 12:17:56] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 12:17:56] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 12:17:56] [INFO] Initialisation terminée avec succès
+[2026-01-31 12:17:56] [INFO] Application prête
+[2026-01-31 12:18:33] [INFO] Connexion base de données fermée
+[2026-01-31 12:18:33] [INFO] === FIN KIPACOIN ===
+[2026-01-31 12:18:35] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 12:18:35] [INFO] Vérification connexion base de données
+[2026-01-31 12:18:35] [INFO] Connexion base de données OK
+[2026-01-31 12:18:35] [INFO] Vérification tables de la base de données
+[2026-01-31 12:18:35] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 12:18:35] [INFO] Vérification permissions dossiers logs
+[2026-01-31 12:18:35] [INFO] Permissions dossiers logs OK
+[2026-01-31 12:18:35] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 12:18:35] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 12:18:35] [INFO] Initialisation terminée avec succès
+[2026-01-31 12:18:35] [INFO] Application prête
+[2026-01-31 12:18:57] [INFO] Connexion base de données fermée
+[2026-01-31 12:18:57] [INFO] === FIN KIPACOIN ===
+[2026-01-31 12:27:19] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 12:27:19] [INFO] Vérification connexion base de données
+[2026-01-31 12:27:19] [INFO] Connexion base de données OK
+[2026-01-31 12:27:19] [INFO] Vérification tables de la base de données
+[2026-01-31 12:27:19] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 12:27:19] [INFO] Vérification permissions dossiers logs
+[2026-01-31 12:27:19] [INFO] Permissions dossiers logs OK
+[2026-01-31 12:27:19] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 12:27:19] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 12:27:19] [INFO] Initialisation terminée avec succès
+[2026-01-31 12:27:19] [INFO] Application prête
+[2026-01-31 12:27:34] [INFO] Connexion base de données fermée
+[2026-01-31 12:27:34] [INFO] === FIN KIPACOIN ===
+[2026-01-31 12:28:20] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 12:28:20] [INFO] Vérification connexion base de données
+[2026-01-31 12:28:20] [INFO] Connexion base de données OK
+[2026-01-31 12:28:20] [INFO] Vérification tables de la base de données
+[2026-01-31 12:28:20] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 12:28:20] [INFO] Vérification permissions dossiers logs
+[2026-01-31 12:28:20] [INFO] Permissions dossiers logs OK
+[2026-01-31 12:28:20] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 12:28:20] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 12:28:20] [INFO] Initialisation terminée avec succès
+[2026-01-31 12:28:20] [INFO] Application prête
+[2026-01-31 12:28:25] [INFO] Connexion base de données fermée
+[2026-01-31 12:28:25] [INFO] === FIN KIPACOIN ===
+[2026-01-31 12:29:28] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 12:29:28] [INFO] Vérification connexion base de données
+[2026-01-31 12:29:28] [INFO] Connexion base de données OK
+[2026-01-31 12:29:28] [INFO] Vérification tables de la base de données
+[2026-01-31 12:29:28] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 12:29:28] [INFO] Vérification permissions dossiers logs
+[2026-01-31 12:29:28] [INFO] Permissions dossiers logs OK
+[2026-01-31 12:29:28] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 12:29:28] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 12:29:28] [INFO] Initialisation terminée avec succès
+[2026-01-31 12:29:28] [INFO] Application prête
+[2026-01-31 13:10:25] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 13:10:25] [INFO] Vérification connexion base de données
+[2026-01-31 13:10:25] [INFO] Connexion base de données OK
+[2026-01-31 13:10:25] [INFO] Vérification tables de la base de données
+[2026-01-31 13:10:25] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 13:10:25] [INFO] Vérification permissions dossiers logs
+[2026-01-31 13:10:25] [INFO] Permissions dossiers logs OK
+[2026-01-31 13:10:25] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 13:10:25] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 13:10:25] [INFO] Initialisation terminée avec succès
+[2026-01-31 13:10:25] [INFO] Application prête
+[2026-01-31 13:18:02] [INFO] Connexion base de données fermée
+[2026-01-31 13:18:02] [INFO] === FIN KIPACOIN ===
+[2026-01-31 13:25:42] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 13:25:42] [INFO] Vérification connexion base de données
+[2026-01-31 13:25:42] [INFO] Connexion base de données OK
+[2026-01-31 13:25:42] [INFO] Vérification tables de la base de données
+[2026-01-31 13:25:42] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 13:25:42] [INFO] Vérification permissions dossiers logs
+[2026-01-31 13:25:42] [INFO] Permissions dossiers logs OK
+[2026-01-31 13:25:42] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 13:25:42] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 13:25:42] [INFO] Initialisation terminée avec succès
+[2026-01-31 13:25:42] [INFO] Application prête
+[2026-01-31 13:39:55] [INFO] Connexion base de données fermée
+[2026-01-31 13:39:55] [INFO] === FIN KIPACOIN ===
+[2026-01-31 13:40:02] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 13:40:02] [INFO] Vérification connexion base de données
+[2026-01-31 13:40:02] [INFO] Connexion base de données OK
+[2026-01-31 13:40:02] [INFO] Vérification tables de la base de données
+[2026-01-31 13:40:02] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 13:40:02] [INFO] Vérification permissions dossiers logs
+[2026-01-31 13:40:02] [INFO] Permissions dossiers logs OK
+[2026-01-31 13:40:02] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 13:40:02] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 13:40:02] [INFO] Initialisation terminée avec succès
+[2026-01-31 13:40:02] [INFO] Application prête
+[2026-01-31 13:59:03] [INFO] Connexion base de données fermée
+[2026-01-31 13:59:03] [INFO] === FIN KIPACOIN ===
+[2026-01-31 13:59:06] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 13:59:06] [INFO] Vérification connexion base de données
+[2026-01-31 13:59:06] [INFO] Connexion base de données OK
+[2026-01-31 13:59:06] [INFO] Vérification tables de la base de données
+[2026-01-31 13:59:06] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 13:59:06] [INFO] Vérification permissions dossiers logs
+[2026-01-31 13:59:06] [INFO] Permissions dossiers logs OK
+[2026-01-31 13:59:06] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 13:59:06] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 13:59:06] [INFO] Initialisation terminée avec succès
+[2026-01-31 13:59:06] [INFO] Application prête
+[2026-01-31 13:59:12] [INFO] Connexion base de données fermée
+[2026-01-31 13:59:12] [INFO] === FIN KIPACOIN ===
+[2026-01-31 13:59:14] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 13:59:14] [INFO] Vérification connexion base de données
+[2026-01-31 13:59:14] [INFO] Connexion base de données OK
+[2026-01-31 13:59:14] [INFO] Vérification tables de la base de données
+[2026-01-31 13:59:14] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 13:59:14] [INFO] Vérification permissions dossiers logs
+[2026-01-31 13:59:14] [INFO] Permissions dossiers logs OK
+[2026-01-31 13:59:14] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 13:59:14] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 13:59:14] [INFO] Initialisation terminée avec succès
+[2026-01-31 13:59:14] [INFO] Application prête
+[2026-01-31 13:59:18] [INFO] Connexion base de données fermée
+[2026-01-31 13:59:18] [INFO] === FIN KIPACOIN ===
+[2026-01-31 13:59:20] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 13:59:20] [INFO] Vérification connexion base de données
+[2026-01-31 13:59:20] [INFO] Connexion base de données OK
+[2026-01-31 13:59:20] [INFO] Vérification tables de la base de données
+[2026-01-31 13:59:20] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 13:59:20] [INFO] Vérification permissions dossiers logs
+[2026-01-31 13:59:20] [INFO] Permissions dossiers logs OK
+[2026-01-31 13:59:20] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 13:59:20] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 13:59:20] [INFO] Initialisation terminée avec succès
+[2026-01-31 13:59:20] [INFO] Application prête
+[2026-01-31 14:48:11] [INFO] Connexion base de données fermée
+[2026-01-31 14:48:11] [INFO] === FIN KIPACOIN ===
+[2026-01-31 20:58:15] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 20:58:15] [INFO] Vérification connexion base de données
+[2026-01-31 20:58:15] [INFO] Connexion base de données OK
+[2026-01-31 20:58:15] [INFO] Vérification tables de la base de données
+[2026-01-31 20:58:15] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 20:58:15] [INFO] Vérification permissions dossiers logs
+[2026-01-31 20:58:15] [INFO] Permissions dossiers logs OK
+[2026-01-31 20:58:15] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 20:58:15] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 20:58:15] [INFO] Initialisation terminée avec succès
+[2026-01-31 20:58:15] [INFO] Application prête
+[2026-01-31 20:58:25] [INFO] Connexion base de données fermée
+[2026-01-31 20:58:25] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:03:39] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:03:39] [INFO] Vérification connexion base de données
+[2026-01-31 21:03:39] [INFO] Connexion base de données OK
+[2026-01-31 21:03:39] [INFO] Vérification tables de la base de données
+[2026-01-31 21:03:39] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:03:39] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:03:39] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:03:39] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:03:39] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:03:39] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:03:39] [INFO] Application prête
+[2026-01-31 21:03:50] [INFO] Connexion base de données fermée
+[2026-01-31 21:03:50] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:22:02] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:22:02] [INFO] Vérification connexion base de données
+[2026-01-31 21:22:02] [INFO] Connexion base de données OK
+[2026-01-31 21:22:02] [INFO] Vérification tables de la base de données
+[2026-01-31 21:22:02] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:22:02] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:22:02] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:22:02] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:22:02] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:22:02] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:22:02] [INFO] Application prête
+[2026-01-31 21:22:47] [INFO] Connexion base de données fermée
+[2026-01-31 21:22:47] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:22:49] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:22:49] [INFO] Vérification connexion base de données
+[2026-01-31 21:22:49] [INFO] Connexion base de données OK
+[2026-01-31 21:22:49] [INFO] Vérification tables de la base de données
+[2026-01-31 21:22:49] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:22:49] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:22:49] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:22:49] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:22:49] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:22:49] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:22:49] [INFO] Application prête
+[2026-01-31 21:25:55] [INFO] Connexion base de données fermée
+[2026-01-31 21:25:55] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:26:16] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:26:16] [INFO] Vérification connexion base de données
+[2026-01-31 21:26:16] [INFO] Connexion base de données OK
+[2026-01-31 21:26:16] [INFO] Vérification tables de la base de données
+[2026-01-31 21:26:16] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:26:16] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:26:16] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:26:16] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:26:16] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:26:16] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:26:16] [INFO] Application prête
+[2026-01-31 21:26:29] [INFO] Connexion base de données fermée
+[2026-01-31 21:26:29] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:26:35] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:26:35] [INFO] Vérification connexion base de données
+[2026-01-31 21:26:35] [INFO] Connexion base de données OK
+[2026-01-31 21:26:35] [INFO] Vérification tables de la base de données
+[2026-01-31 21:26:35] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:26:35] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:26:35] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:26:35] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:26:35] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:26:35] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:26:35] [INFO] Application prête
+[2026-01-31 21:26:58] [INFO] Connexion base de données fermée
+[2026-01-31 21:26:58] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:27:04] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:27:04] [INFO] Vérification connexion base de données
+[2026-01-31 21:27:04] [INFO] Connexion base de données OK
+[2026-01-31 21:27:04] [INFO] Vérification tables de la base de données
+[2026-01-31 21:27:04] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:27:04] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:27:04] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:27:04] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:27:04] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:27:04] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:27:04] [INFO] Application prête
+[2026-01-31 21:27:07] [INFO] Connexion base de données fermée
+[2026-01-31 21:27:07] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:27:13] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:27:13] [INFO] Vérification connexion base de données
+[2026-01-31 21:27:13] [INFO] Connexion base de données OK
+[2026-01-31 21:27:13] [INFO] Vérification tables de la base de données
+[2026-01-31 21:27:13] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:27:13] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:27:13] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:27:13] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:27:13] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:27:13] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:27:13] [INFO] Application prête
+[2026-01-31 21:27:16] [INFO] Connexion base de données fermée
+[2026-01-31 21:27:16] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:27:21] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:27:21] [INFO] Vérification connexion base de données
+[2026-01-31 21:27:21] [INFO] Connexion base de données OK
+[2026-01-31 21:27:21] [INFO] Vérification tables de la base de données
+[2026-01-31 21:27:21] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:27:21] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:27:21] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:27:21] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:27:21] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:27:21] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:27:21] [INFO] Application prête
+[2026-01-31 21:29:48] [INFO] Connexion base de données fermée
+[2026-01-31 21:29:48] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:30:15] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:30:15] [INFO] Vérification connexion base de données
+[2026-01-31 21:30:15] [INFO] Connexion base de données OK
+[2026-01-31 21:30:15] [INFO] Vérification tables de la base de données
+[2026-01-31 21:30:15] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:30:15] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:30:15] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:30:15] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:30:15] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:30:15] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:30:15] [INFO] Application prête
+[2026-01-31 21:39:09] [INFO] Connexion base de données fermée
+[2026-01-31 21:39:09] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:39:34] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:39:34] [INFO] Vérification connexion base de données
+[2026-01-31 21:39:34] [INFO] Connexion base de données OK
+[2026-01-31 21:39:34] [INFO] Vérification tables de la base de données
+[2026-01-31 21:39:34] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:39:34] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:39:34] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:39:34] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:39:34] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:39:34] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:39:34] [INFO] Application prête
+[2026-01-31 21:39:45] [INFO] Connexion base de données fermée
+[2026-01-31 21:39:45] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:39:48] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:39:48] [INFO] Vérification connexion base de données
+[2026-01-31 21:39:48] [INFO] Connexion base de données OK
+[2026-01-31 21:39:48] [INFO] Vérification tables de la base de données
+[2026-01-31 21:39:48] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:39:48] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:39:48] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:39:48] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:39:48] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:39:48] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:39:48] [INFO] Application prête
+[2026-01-31 21:40:45] [INFO] Connexion base de données fermée
+[2026-01-31 21:40:45] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:44:17] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:44:17] [INFO] Vérification connexion base de données
+[2026-01-31 21:44:17] [INFO] Connexion base de données OK
+[2026-01-31 21:44:17] [INFO] Vérification tables de la base de données
+[2026-01-31 21:44:17] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:44:17] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:44:17] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:44:17] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:44:17] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:44:17] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:44:17] [INFO] Application prête
+[2026-01-31 21:46:35] [INFO] Connexion base de données fermée
+[2026-01-31 21:46:35] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:47:00] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:47:02] [INFO] Vérification connexion base de données
+[2026-01-31 21:47:02] [INFO] Connexion base de données OK
+[2026-01-31 21:47:04] [INFO] Vérification tables de la base de données
+[2026-01-31 21:47:04] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:47:06] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:47:06] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:47:08] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:47:08] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:47:10] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:47:10] [INFO] Application prête
+[2026-01-31 21:47:12] [INFO] Connexion base de données fermée
+[2026-01-31 21:47:12] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:48:11] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:48:12] [INFO] Vérification connexion base de données
+[2026-01-31 21:48:12] [INFO] Connexion base de données OK
+[2026-01-31 21:48:13] [INFO] Vérification tables de la base de données
+[2026-01-31 21:48:13] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:48:14] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:48:14] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:48:15] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:48:15] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:48:16] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:48:16] [INFO] Application prête
+[2026-01-31 21:53:01] [INFO] Connexion base de données fermée
+[2026-01-31 21:53:01] [INFO] === FIN KIPACOIN ===
+[2026-01-31 21:53:12] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 21:53:12] [INFO] Vérification connexion base de données
+[2026-01-31 21:53:12] [INFO] Connexion base de données OK
+[2026-01-31 21:53:13] [INFO] Vérification tables de la base de données
+[2026-01-31 21:53:13] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 21:53:13] [INFO] Vérification permissions dossiers logs
+[2026-01-31 21:53:13] [INFO] Permissions dossiers logs OK
+[2026-01-31 21:53:14] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 21:53:14] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 21:53:14] [INFO] Initialisation terminée avec succès
+[2026-01-31 21:53:14] [INFO] Application prête
+[2026-01-31 21:59:45] [INFO] Connexion base de données fermée
+[2026-01-31 21:59:45] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:06:41] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:06:41] [INFO] Vérification connexion base de données
+[2026-01-31 22:06:41] [INFO] Connexion base de données OK
+[2026-01-31 22:06:42] [INFO] Vérification tables de la base de données
+[2026-01-31 22:06:42] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:06:42] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:06:42] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:06:43] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:06:43] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:06:43] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:06:43] [INFO] Application prête
+[2026-01-31 22:20:53] [INFO] Connexion base de données fermée
+[2026-01-31 22:20:53] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:26:37] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:26:37] [INFO] Vérification connexion base de données
+[2026-01-31 22:26:37] [INFO] Connexion base de données OK
+[2026-01-31 22:26:38] [INFO] Vérification tables de la base de données
+[2026-01-31 22:26:38] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:26:38] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:26:38] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:26:39] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:26:39] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:26:39] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:26:39] [INFO] Application prête
+[2026-01-31 22:30:35] [INFO] Connexion base de données fermée
+[2026-01-31 22:30:35] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:30:37] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:30:37] [INFO] Vérification connexion base de données
+[2026-01-31 22:30:37] [INFO] Connexion base de données OK
+[2026-01-31 22:30:38] [INFO] Vérification tables de la base de données
+[2026-01-31 22:30:38] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:30:38] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:30:38] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:30:39] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:30:39] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:30:39] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:30:39] [INFO] Application prête
+[2026-01-31 22:34:53] [INFO] Connexion base de données fermée
+[2026-01-31 22:34:53] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:49:07] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:49:08] [INFO] Vérification connexion base de données
+[2026-01-31 22:49:08] [INFO] Connexion base de données OK
+[2026-01-31 22:49:08] [INFO] Vérification tables de la base de données
+[2026-01-31 22:49:08] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:49:09] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:49:09] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:49:09] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:49:09] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:49:10] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:49:10] [INFO] Application prête
+[2026-01-31 22:51:38] [INFO] Connexion base de données fermée
+[2026-01-31 22:51:38] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:51:40] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:51:40] [INFO] Vérification connexion base de données
+[2026-01-31 22:51:40] [INFO] Connexion base de données OK
+[2026-01-31 22:51:41] [INFO] Vérification tables de la base de données
+[2026-01-31 22:51:41] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:51:41] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:51:41] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:51:42] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:51:42] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:51:42] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:51:42] [INFO] Application prête
+[2026-01-31 22:52:42] [INFO] Connexion base de données fermée
+[2026-01-31 22:52:42] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:52:49] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:52:50] [INFO] Vérification connexion base de données
+[2026-01-31 22:52:50] [INFO] Connexion base de données OK
+[2026-01-31 22:52:50] [INFO] Vérification tables de la base de données
+[2026-01-31 22:52:50] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:52:51] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:52:51] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:52:51] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:52:51] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:52:52] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:52:52] [INFO] Application prête
+[2026-01-31 22:53:08] [INFO] Connexion base de données fermée
+[2026-01-31 22:53:08] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:53:19] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:53:20] [INFO] Vérification connexion base de données
+[2026-01-31 22:53:20] [INFO] Connexion base de données OK
+[2026-01-31 22:53:20] [INFO] Vérification tables de la base de données
+[2026-01-31 22:53:20] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:53:21] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:53:21] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:53:21] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:53:21] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:53:22] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:53:22] [INFO] Application prête
+[2026-01-31 22:53:36] [INFO] Connexion base de données fermée
+[2026-01-31 22:53:36] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:53:40] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:53:40] [INFO] Vérification connexion base de données
+[2026-01-31 22:53:40] [INFO] Connexion base de données OK
+[2026-01-31 22:53:41] [INFO] Vérification tables de la base de données
+[2026-01-31 22:53:41] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:53:41] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:53:41] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:53:42] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:53:42] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:53:42] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:53:42] [INFO] Application prête
+[2026-01-31 22:53:48] [INFO] Connexion base de données fermée
+[2026-01-31 22:53:48] [INFO] === FIN KIPACOIN ===
+[2026-01-31 22:53:55] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 22:53:56] [INFO] Vérification connexion base de données
+[2026-01-31 22:53:56] [INFO] Connexion base de données OK
+[2026-01-31 22:53:56] [INFO] Vérification tables de la base de données
+[2026-01-31 22:53:56] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 22:53:57] [INFO] Vérification permissions dossiers logs
+[2026-01-31 22:53:57] [INFO] Permissions dossiers logs OK
+[2026-01-31 22:53:57] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 22:53:57] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 22:53:58] [INFO] Initialisation terminée avec succès
+[2026-01-31 22:53:58] [INFO] Application prête
+[2026-01-31 23:42:08] [INFO] Connexion base de données fermée
+[2026-01-31 23:42:08] [INFO] === FIN KIPACOIN ===
+[2026-01-31 23:53:12] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 23:53:13] [INFO] Vérification connexion base de données
+[2026-01-31 23:53:13] [INFO] Connexion base de données OK
+[2026-01-31 23:53:13] [INFO] Vérification tables de la base de données
+[2026-01-31 23:53:13] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 23:53:14] [INFO] Vérification permissions dossiers logs
+[2026-01-31 23:53:14] [INFO] Permissions dossiers logs OK
+[2026-01-31 23:53:14] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 23:53:14] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 23:53:15] [INFO] Initialisation terminée avec succès
+[2026-01-31 23:53:15] [INFO] Application prête
+[2026-01-31 23:53:52] [INFO] Connexion base de données fermée
+[2026-01-31 23:53:52] [INFO] === FIN KIPACOIN ===
+[2026-01-31 23:53:55] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 23:53:56] [INFO] Vérification connexion base de données
+[2026-01-31 23:53:56] [INFO] Connexion base de données OK
+[2026-01-31 23:53:56] [INFO] Vérification tables de la base de données
+[2026-01-31 23:53:56] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 23:53:57] [INFO] Vérification permissions dossiers logs
+[2026-01-31 23:53:57] [INFO] Permissions dossiers logs OK
+[2026-01-31 23:53:57] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 23:53:57] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 23:53:58] [INFO] Initialisation terminée avec succès
+[2026-01-31 23:53:58] [INFO] Application prête
+[2026-01-31 23:56:58] [INFO] Connexion base de données fermée
+[2026-01-31 23:56:58] [INFO] === FIN KIPACOIN ===
+[2026-01-31 23:57:00] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 23:57:01] [INFO] Vérification connexion base de données
+[2026-01-31 23:57:01] [INFO] Connexion base de données OK
+[2026-01-31 23:57:01] [INFO] Vérification tables de la base de données
+[2026-01-31 23:57:01] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 23:57:02] [INFO] Vérification permissions dossiers logs
+[2026-01-31 23:57:02] [INFO] Permissions dossiers logs OK
+[2026-01-31 23:57:02] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 23:57:02] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 23:57:03] [INFO] Initialisation terminée avec succès
+[2026-01-31 23:57:03] [INFO] Application prête
+[2026-01-31 23:59:31] [INFO] Connexion base de données fermée
+[2026-01-31 23:59:31] [INFO] === FIN KIPACOIN ===
+[2026-01-31 23:59:37] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-01-31 23:59:37] [INFO] Vérification connexion base de données
+[2026-01-31 23:59:37] [INFO] Connexion base de données OK
+[2026-01-31 23:59:38] [INFO] Vérification tables de la base de données
+[2026-01-31 23:59:38] [INFO] Toutes les tables sont présentes (5)
+[2026-01-31 23:59:38] [INFO] Vérification permissions dossiers logs
+[2026-01-31 23:59:38] [INFO] Permissions dossiers logs OK
+[2026-01-31 23:59:39] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-01-31 23:59:39] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-01-31 23:59:39] [INFO] Initialisation terminée avec succès
+[2026-01-31 23:59:39] [INFO] Application prête
+[2026-02-01 00:19:41] [INFO] Connexion base de données fermée
+[2026-02-01 00:19:41] [INFO] === FIN KIPACOIN ===
+[2026-02-01 17:44:54] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 17:44:54] [INFO] Vérification connexion base de données
+[2026-02-01 17:44:54] [INFO] Connexion base de données OK
+[2026-02-01 17:44:55] [INFO] Vérification tables de la base de données
+[2026-02-01 17:44:55] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 17:44:55] [INFO] Vérification permissions dossiers logs
+[2026-02-01 17:44:55] [INFO] Permissions dossiers logs OK
+[2026-02-01 17:44:56] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 17:44:56] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 17:44:56] [INFO] Initialisation terminée avec succès
+[2026-02-01 17:44:56] [INFO] Application prête
+[2026-02-01 17:55:19] [INFO] Connexion base de données fermée
+[2026-02-01 17:55:19] [INFO] === FIN KIPACOIN ===
+[2026-02-01 18:28:31] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 18:28:32] [INFO] Vérification connexion base de données
+[2026-02-01 18:28:32] [INFO] Connexion base de données OK
+[2026-02-01 18:28:32] [INFO] Vérification tables de la base de données
+[2026-02-01 18:28:32] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 18:28:33] [INFO] Vérification permissions dossiers logs
+[2026-02-01 18:28:33] [INFO] Permissions dossiers logs OK
+[2026-02-01 18:28:33] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 18:28:33] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 18:28:34] [INFO] Initialisation terminée avec succès
+[2026-02-01 18:28:34] [INFO] Application prête
+[2026-02-01 18:59:22] [INFO] Connexion base de données fermée
+[2026-02-01 18:59:22] [INFO] === FIN KIPACOIN ===
+[2026-02-01 18:59:33] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 18:59:33] [INFO] Vérification connexion base de données
+[2026-02-01 18:59:33] [INFO] Connexion base de données OK
+[2026-02-01 18:59:34] [INFO] Vérification tables de la base de données
+[2026-02-01 18:59:34] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 18:59:34] [INFO] Vérification permissions dossiers logs
+[2026-02-01 18:59:34] [INFO] Permissions dossiers logs OK
+[2026-02-01 18:59:35] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 18:59:35] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 18:59:35] [INFO] Initialisation terminée avec succès
+[2026-02-01 18:59:35] [INFO] Application prête
+[2026-02-01 20:54:52] [INFO] Connexion base de données fermée
+[2026-02-01 20:54:52] [INFO] === FIN KIPACOIN ===
+[2026-02-01 20:55:07] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 20:55:07] [INFO] Vérification connexion base de données
+[2026-02-01 20:55:07] [INFO] Connexion base de données OK
+[2026-02-01 20:55:08] [INFO] Vérification tables de la base de données
+[2026-02-01 20:55:08] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 20:55:08] [INFO] Vérification permissions dossiers logs
+[2026-02-01 20:55:08] [INFO] Permissions dossiers logs OK
+[2026-02-01 20:55:09] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 20:55:09] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 20:55:09] [INFO] Initialisation terminée avec succès
+[2026-02-01 20:55:09] [INFO] Application prête
+[2026-02-01 22:27:24] [INFO] Connexion base de données fermée
+[2026-02-01 22:27:24] [INFO] === FIN KIPACOIN ===
+[2026-02-01 22:27:27] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 22:27:27] [INFO] Vérification connexion base de données
+[2026-02-01 22:27:27] [INFO] Connexion base de données OK
+[2026-02-01 22:27:28] [INFO] Vérification tables de la base de données
+[2026-02-01 22:27:28] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 22:27:28] [INFO] Vérification permissions dossiers logs
+[2026-02-01 22:27:28] [INFO] Permissions dossiers logs OK
+[2026-02-01 22:27:29] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 22:27:29] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 22:27:29] [INFO] Initialisation terminée avec succès
+[2026-02-01 22:27:29] [INFO] Application prête
+[2026-02-01 22:50:56] [INFO] Connexion base de données fermée
+[2026-02-01 22:50:56] [INFO] === FIN KIPACOIN ===
+[2026-02-01 22:51:29] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 22:51:29] [INFO] Vérification connexion base de données
+[2026-02-01 22:51:29] [INFO] Connexion base de données OK
+[2026-02-01 22:51:30] [INFO] Vérification tables de la base de données
+[2026-02-01 22:51:30] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 22:51:30] [INFO] Vérification permissions dossiers logs
+[2026-02-01 22:51:30] [INFO] Permissions dossiers logs OK
+[2026-02-01 22:51:31] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 22:51:31] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 22:51:31] [INFO] Initialisation terminée avec succès
+[2026-02-01 22:51:31] [INFO] Application prête
+[2026-02-01 22:52:18] [INFO] Connexion base de données fermée
+[2026-02-01 22:52:18] [INFO] === FIN KIPACOIN ===
+[2026-02-01 22:52:49] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 22:52:50] [INFO] Vérification connexion base de données
+[2026-02-01 22:52:50] [INFO] Connexion base de données OK
+[2026-02-01 22:52:50] [INFO] Vérification tables de la base de données
+[2026-02-01 22:52:50] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 22:52:51] [INFO] Vérification permissions dossiers logs
+[2026-02-01 22:52:51] [INFO] Permissions dossiers logs OK
+[2026-02-01 22:52:51] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 22:52:51] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 22:52:52] [INFO] Initialisation terminée avec succès
+[2026-02-01 22:52:52] [INFO] Application prête
+[2026-02-01 22:53:01] [INFO] Connexion base de données fermée
+[2026-02-01 22:53:01] [INFO] === FIN KIPACOIN ===
+[2026-02-01 23:23:51] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 23:23:51] [INFO] Vérification connexion base de données
+[2026-02-01 23:23:51] [INFO] Connexion base de données OK
+[2026-02-01 23:23:52] [INFO] Vérification tables de la base de données
+[2026-02-01 23:23:52] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 23:23:52] [INFO] Vérification permissions dossiers logs
+[2026-02-01 23:23:52] [INFO] Permissions dossiers logs OK
+[2026-02-01 23:23:53] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 23:23:53] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 23:23:53] [INFO] Initialisation terminée avec succès
+[2026-02-01 23:23:53] [INFO] Application prête
+[2026-02-01 23:38:15] [INFO] Connexion base de données fermée
+[2026-02-01 23:38:15] [INFO] === FIN KIPACOIN ===
+[2026-02-01 23:48:36] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 23:48:37] [INFO] Vérification connexion base de données
+[2026-02-01 23:48:37] [INFO] Connexion base de données OK
+[2026-02-01 23:48:37] [INFO] Vérification tables de la base de données
+[2026-02-01 23:48:37] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 23:48:38] [INFO] Vérification permissions dossiers logs
+[2026-02-01 23:48:38] [INFO] Permissions dossiers logs OK
+[2026-02-01 23:48:38] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 23:48:38] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 23:48:39] [INFO] Initialisation terminée avec succès
+[2026-02-01 23:48:39] [INFO] Application prête
+[2026-02-01 23:56:25] [INFO] Connexion base de données fermée
+[2026-02-01 23:56:25] [INFO] === FIN KIPACOIN ===
+[2026-02-01 23:56:32] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-01 23:56:32] [INFO] Vérification connexion base de données
+[2026-02-01 23:56:33] [INFO] Connexion base de données OK
+[2026-02-01 23:56:33] [INFO] Vérification tables de la base de données
+[2026-02-01 23:56:33] [INFO] Toutes les tables sont présentes (5)
+[2026-02-01 23:56:33] [INFO] Vérification permissions dossiers logs
+[2026-02-01 23:56:33] [INFO] Permissions dossiers logs OK
+[2026-02-01 23:56:34] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-01 23:56:34] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-01 23:56:34] [INFO] Initialisation terminée avec succès
+[2026-02-01 23:56:34] [INFO] Application prête
+[2026-02-02 00:04:41] [INFO] Connexion base de données fermée
+[2026-02-02 00:04:41] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:04:50] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:04:50] [INFO] Vérification connexion base de données
+[2026-02-02 00:04:50] [INFO] Connexion base de données OK
+[2026-02-02 00:04:51] [INFO] Vérification tables de la base de données
+[2026-02-02 00:04:51] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:04:51] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:04:51] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:04:52] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:04:52] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:04:52] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:04:52] [INFO] Application prête
+[2026-02-02 00:06:58] [INFO] Connexion base de données fermée
+[2026-02-02 00:06:58] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:07:00] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:07:00] [INFO] Vérification connexion base de données
+[2026-02-02 00:07:00] [INFO] Connexion base de données OK
+[2026-02-02 00:07:01] [INFO] Vérification tables de la base de données
+[2026-02-02 00:07:01] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:07:01] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:07:01] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:07:02] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:07:02] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:07:02] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:07:02] [INFO] Application prête
+[2026-02-02 00:07:49] [INFO] Connexion base de données fermée
+[2026-02-02 00:07:49] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:07:55] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:07:55] [INFO] Vérification connexion base de données
+[2026-02-02 00:07:55] [INFO] Connexion base de données OK
+[2026-02-02 00:07:56] [INFO] Vérification tables de la base de données
+[2026-02-02 00:07:56] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:07:56] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:07:56] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:07:57] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:07:57] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:07:57] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:07:57] [INFO] Application prête
+[2026-02-02 00:08:43] [INFO] Connexion base de données fermée
+[2026-02-02 00:08:43] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:10:33] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:10:33] [INFO] Vérification connexion base de données
+[2026-02-02 00:10:33] [INFO] Connexion base de données OK
+[2026-02-02 00:10:34] [INFO] Vérification tables de la base de données
+[2026-02-02 00:10:34] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:10:34] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:10:34] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:10:35] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:10:35] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:10:35] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:10:35] [INFO] Application prête
+[2026-02-02 00:10:57] [INFO] Connexion base de données fermée
+[2026-02-02 00:10:57] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:11:00] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:11:00] [INFO] Vérification connexion base de données
+[2026-02-02 00:11:00] [INFO] Connexion base de données OK
+[2026-02-02 00:11:01] [INFO] Vérification tables de la base de données
+[2026-02-02 00:11:01] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:11:01] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:11:01] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:11:02] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:11:02] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:11:02] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:11:02] [INFO] Application prête
+[2026-02-02 00:11:17] [INFO] Connexion base de données fermée
+[2026-02-02 00:11:17] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:22:10] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:22:10] [INFO] Vérification connexion base de données
+[2026-02-02 00:22:10] [INFO] Connexion base de données OK
+[2026-02-02 00:22:11] [INFO] Vérification tables de la base de données
+[2026-02-02 00:22:11] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:22:11] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:22:11] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:22:12] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:22:12] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:22:12] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:22:12] [INFO] Application prête
+[2026-02-02 00:22:54] [INFO] Connexion base de données fermée
+[2026-02-02 00:22:54] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:22:57] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:22:57] [INFO] Vérification connexion base de données
+[2026-02-02 00:22:57] [INFO] Connexion base de données OK
+[2026-02-02 00:22:58] [INFO] Vérification tables de la base de données
+[2026-02-02 00:22:58] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:22:58] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:22:58] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:22:59] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:22:59] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:22:59] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:22:59] [INFO] Application prête
+[2026-02-02 00:30:42] [INFO] Connexion base de données fermée
+[2026-02-02 00:30:42] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:30:55] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:30:55] [INFO] Vérification connexion base de données
+[2026-02-02 00:30:55] [INFO] Connexion base de données OK
+[2026-02-02 00:30:56] [INFO] Vérification tables de la base de données
+[2026-02-02 00:30:56] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:30:56] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:30:56] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:30:57] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:30:57] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:30:57] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:30:57] [INFO] Application prête
+[2026-02-02 00:31:26] [INFO] Connexion base de données fermée
+[2026-02-02 00:31:26] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:31:28] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:31:29] [INFO] Vérification connexion base de données
+[2026-02-02 00:31:29] [INFO] Connexion base de données OK
+[2026-02-02 00:31:29] [INFO] Vérification tables de la base de données
+[2026-02-02 00:31:29] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:31:30] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:31:30] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:31:30] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:31:30] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:31:31] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:31:31] [INFO] Application prête
+[2026-02-02 00:31:55] [INFO] Connexion base de données fermée
+[2026-02-02 00:31:55] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:32:04] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:32:05] [INFO] Vérification connexion base de données
+[2026-02-02 00:32:05] [INFO] Connexion base de données OK
+[2026-02-02 00:32:05] [INFO] Vérification tables de la base de données
+[2026-02-02 00:32:05] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:32:06] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:32:06] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:32:06] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:32:06] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:32:07] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:32:07] [INFO] Application prête
+[2026-02-02 00:35:08] [INFO] Connexion base de données fermée
+[2026-02-02 00:35:08] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:35:20] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:35:20] [INFO] Vérification connexion base de données
+[2026-02-02 00:35:20] [INFO] Connexion base de données OK
+[2026-02-02 00:35:21] [INFO] Vérification tables de la base de données
+[2026-02-02 00:35:21] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:35:21] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:35:21] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:35:22] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:35:22] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:35:22] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:35:22] [INFO] Application prête
+[2026-02-02 00:36:04] [INFO] Connexion base de données fermée
+[2026-02-02 00:36:04] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:36:07] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:36:07] [INFO] Vérification connexion base de données
+[2026-02-02 00:36:07] [INFO] Connexion base de données OK
+[2026-02-02 00:36:08] [INFO] Vérification tables de la base de données
+[2026-02-02 00:36:08] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:36:08] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:36:08] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:36:09] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:36:09] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:36:09] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:36:09] [INFO] Application prête
+[2026-02-02 00:40:16] [INFO] Connexion base de données fermée
+[2026-02-02 00:40:16] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:43:50] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:43:51] [INFO] Vérification connexion base de données
+[2026-02-02 00:43:51] [INFO] Connexion base de données OK
+[2026-02-02 00:43:51] [INFO] Vérification tables de la base de données
+[2026-02-02 00:43:51] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:43:52] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:43:52] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:43:52] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:43:52] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:43:53] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:43:53] [INFO] Application prête
+[2026-02-02 00:44:19] [INFO] Connexion base de données fermée
+[2026-02-02 00:44:19] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:44:51] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:44:52] [INFO] Vérification connexion base de données
+[2026-02-02 00:44:52] [INFO] Connexion base de données OK
+[2026-02-02 00:44:52] [INFO] Vérification tables de la base de données
+[2026-02-02 00:44:52] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:44:53] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:44:53] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:44:53] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:44:53] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:44:54] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:44:54] [INFO] Application prête
+[2026-02-02 00:45:18] [INFO] Connexion base de données fermée
+[2026-02-02 00:45:18] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:53:30] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:53:30] [INFO] Vérification connexion base de données
+[2026-02-02 00:53:30] [INFO] Connexion base de données OK
+[2026-02-02 00:53:31] [INFO] Vérification tables de la base de données
+[2026-02-02 00:53:31] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:53:31] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:53:31] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:53:32] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:53:32] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:53:32] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:53:32] [INFO] Application prête
+[2026-02-02 00:59:47] [INFO] Connexion base de données fermée
+[2026-02-02 00:59:47] [INFO] === FIN KIPACOIN ===
+[2026-02-02 00:59:49] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 00:59:49] [INFO] Vérification connexion base de données
+[2026-02-02 00:59:49] [INFO] Connexion base de données OK
+[2026-02-02 00:59:50] [INFO] Vérification tables de la base de données
+[2026-02-02 00:59:50] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 00:59:50] [INFO] Vérification permissions dossiers logs
+[2026-02-02 00:59:50] [INFO] Permissions dossiers logs OK
+[2026-02-02 00:59:51] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 00:59:51] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 00:59:51] [INFO] Initialisation terminée avec succès
+[2026-02-02 00:59:51] [INFO] Application prête
+[2026-02-02 01:01:58] [INFO] Connexion base de données fermée
+[2026-02-02 01:01:58] [INFO] === FIN KIPACOIN ===
+[2026-02-02 01:02:00] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 01:02:01] [INFO] Vérification connexion base de données
+[2026-02-02 01:02:01] [INFO] Connexion base de données OK
+[2026-02-02 01:02:01] [INFO] Vérification tables de la base de données
+[2026-02-02 01:02:01] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 01:02:02] [INFO] Vérification permissions dossiers logs
+[2026-02-02 01:02:02] [INFO] Permissions dossiers logs OK
+[2026-02-02 01:02:02] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 01:02:02] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 01:02:03] [INFO] Initialisation terminée avec succès
+[2026-02-02 01:02:03] [INFO] Application prête
+[2026-02-02 01:48:26] [INFO] Connexion base de données fermée
+[2026-02-02 01:48:26] [INFO] === FIN KIPACOIN ===
+[2026-02-02 01:48:28] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 01:48:28] [INFO] Vérification connexion base de données
+[2026-02-02 01:48:28] [INFO] Connexion base de données OK
+[2026-02-02 01:48:29] [INFO] Vérification tables de la base de données
+[2026-02-02 01:48:29] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 01:48:29] [INFO] Vérification permissions dossiers logs
+[2026-02-02 01:48:29] [INFO] Permissions dossiers logs OK
+[2026-02-02 01:48:30] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 01:48:30] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 01:48:30] [INFO] Initialisation terminée avec succès
+[2026-02-02 01:48:30] [INFO] Application prête
+[2026-02-02 02:15:39] [INFO] Connexion base de données fermée
+[2026-02-02 02:15:39] [INFO] === FIN KIPACOIN ===
+[2026-02-02 02:20:50] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 02:20:51] [INFO] Vérification connexion base de données
+[2026-02-02 02:20:51] [INFO] Connexion base de données OK
+[2026-02-02 02:20:51] [INFO] Vérification tables de la base de données
+[2026-02-02 02:20:51] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 02:20:52] [INFO] Vérification permissions dossiers logs
+[2026-02-02 02:20:52] [INFO] Permissions dossiers logs OK
+[2026-02-02 02:20:52] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 02:20:52] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 02:20:53] [INFO] Initialisation terminée avec succès
+[2026-02-02 02:20:53] [INFO] Application prête
+[2026-02-02 03:56:54] [INFO] Connexion base de données fermée
+[2026-02-02 03:56:54] [INFO] === FIN KIPACOIN ===
+[2026-02-02 19:35:19] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 19:35:20] [INFO] Vérification connexion base de données
+[2026-02-02 19:35:20] [INFO] Connexion base de données OK
+[2026-02-02 19:35:20] [INFO] Vérification tables de la base de données
+[2026-02-02 19:35:20] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 19:35:21] [INFO] Vérification permissions dossiers logs
+[2026-02-02 19:35:21] [INFO] Permissions dossiers logs OK
+[2026-02-02 19:35:21] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 19:35:21] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 19:35:22] [INFO] Initialisation terminée avec succès
+[2026-02-02 19:35:22] [INFO] Application prête
+[2026-02-02 19:58:18] [INFO] Connexion base de données fermée
+[2026-02-02 19:58:18] [INFO] === FIN KIPACOIN ===
+[2026-02-02 19:58:21] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 19:58:22] [INFO] Vérification connexion base de données
+[2026-02-02 19:58:22] [INFO] Connexion base de données OK
+[2026-02-02 19:58:22] [INFO] Vérification tables de la base de données
+[2026-02-02 19:58:22] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 19:58:23] [INFO] Vérification permissions dossiers logs
+[2026-02-02 19:58:23] [INFO] Permissions dossiers logs OK
+[2026-02-02 19:58:23] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 19:58:23] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 19:58:24] [INFO] Initialisation terminée avec succès
+[2026-02-02 19:58:24] [INFO] Application prête
+[2026-02-02 20:05:32] [INFO] Connexion base de données fermée
+[2026-02-02 20:05:32] [INFO] === FIN KIPACOIN ===
+[2026-02-02 23:27:15] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 23:27:15] [INFO] Vérification connexion base de données
+[2026-02-02 23:27:15] [INFO] Connexion base de données OK
+[2026-02-02 23:27:16] [INFO] Vérification tables de la base de données
+[2026-02-02 23:27:16] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 23:27:16] [INFO] Vérification permissions dossiers logs
+[2026-02-02 23:27:16] [INFO] Permissions dossiers logs OK
+[2026-02-02 23:27:17] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 23:27:17] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 23:27:17] [INFO] Initialisation terminée avec succès
+[2026-02-02 23:27:17] [INFO] Application prête
+[2026-02-02 23:31:46] [INFO] Connexion base de données fermée
+[2026-02-02 23:31:46] [INFO] === FIN KIPACOIN ===
+[2026-02-02 23:33:37] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 23:33:37] [INFO] Vérification connexion base de données
+[2026-02-02 23:33:37] [INFO] Connexion base de données OK
+[2026-02-02 23:33:38] [INFO] Vérification tables de la base de données
+[2026-02-02 23:33:38] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 23:33:38] [INFO] Vérification permissions dossiers logs
+[2026-02-02 23:33:38] [INFO] Permissions dossiers logs OK
+[2026-02-02 23:33:39] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 23:33:39] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 23:33:39] [INFO] Initialisation terminée avec succès
+[2026-02-02 23:33:39] [INFO] Application prête
+[2026-02-02 23:37:18] [INFO] Connexion base de données fermée
+[2026-02-02 23:37:18] [INFO] === FIN KIPACOIN ===
+[2026-02-02 23:41:02] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 23:41:02] [INFO] Vérification connexion base de données
+[2026-02-02 23:41:02] [INFO] Connexion base de données OK
+[2026-02-02 23:41:03] [INFO] Vérification tables de la base de données
+[2026-02-02 23:41:03] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 23:41:03] [INFO] Vérification permissions dossiers logs
+[2026-02-02 23:41:03] [INFO] Permissions dossiers logs OK
+[2026-02-02 23:41:04] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 23:41:04] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 23:41:04] [INFO] Initialisation terminée avec succès
+[2026-02-02 23:41:04] [INFO] Application prête
+[2026-02-02 23:42:40] [INFO] Connexion base de données fermée
+[2026-02-02 23:42:40] [INFO] === FIN KIPACOIN ===
+[2026-02-02 23:46:27] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 23:46:27] [INFO] Vérification connexion base de données
+[2026-02-02 23:46:27] [INFO] Connexion base de données OK
+[2026-02-02 23:46:28] [INFO] Vérification tables de la base de données
+[2026-02-02 23:46:28] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 23:46:28] [INFO] Vérification permissions dossiers logs
+[2026-02-02 23:46:28] [INFO] Permissions dossiers logs OK
+[2026-02-02 23:46:29] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 23:46:29] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 23:46:29] [INFO] Initialisation terminée avec succès
+[2026-02-02 23:46:29] [INFO] Application prête
+[2026-02-02 23:54:23] [INFO] Connexion base de données fermée
+[2026-02-02 23:54:23] [INFO] === FIN KIPACOIN ===
+[2026-02-02 23:54:28] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-02 23:54:29] [INFO] Vérification connexion base de données
+[2026-02-02 23:54:29] [INFO] Connexion base de données OK
+[2026-02-02 23:54:29] [INFO] Vérification tables de la base de données
+[2026-02-02 23:54:29] [INFO] Toutes les tables sont présentes (5)
+[2026-02-02 23:54:30] [INFO] Vérification permissions dossiers logs
+[2026-02-02 23:54:30] [INFO] Permissions dossiers logs OK
+[2026-02-02 23:54:30] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-02 23:54:30] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-02 23:54:31] [INFO] Initialisation terminée avec succès
+[2026-02-02 23:54:31] [INFO] Application prête
+[2026-02-03 00:02:07] [INFO] Connexion base de données fermée
+[2026-02-03 00:02:07] [INFO] === FIN KIPACOIN ===
+[2026-02-03 00:02:09] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-03 00:02:10] [INFO] Vérification connexion base de données
+[2026-02-03 00:02:10] [INFO] Connexion base de données OK
+[2026-02-03 00:02:10] [INFO] Vérification tables de la base de données
+[2026-02-03 00:02:10] [INFO] Toutes les tables sont présentes (5)
+[2026-02-03 00:02:11] [INFO] Vérification permissions dossiers logs
+[2026-02-03 00:02:11] [INFO] Permissions dossiers logs OK
+[2026-02-03 00:02:11] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-03 00:02:11] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-03 00:02:12] [INFO] Initialisation terminée avec succès
+[2026-02-03 00:02:12] [INFO] Application prête
+[2026-02-03 00:05:19] [INFO] Connexion base de données fermée
+[2026-02-03 00:05:19] [INFO] === FIN KIPACOIN ===
+[2026-02-03 00:16:38] [INFO] === DEMARRAGE KIPACOIN ===
+[2026-02-03 00:16:38] [INFO] Vérification connexion base de données
+[2026-02-03 00:16:38] [INFO] Connexion base de données OK
+[2026-02-03 00:16:39] [INFO] Vérification tables de la base de données
+[2026-02-03 00:16:39] [INFO] Toutes les tables sont présentes (5)
+[2026-02-03 00:16:39] [INFO] Vérification permissions dossiers logs
+[2026-02-03 00:16:39] [INFO] Permissions dossiers logs OK
+[2026-02-03 00:16:40] [INFO] Chargement configuration: configs/coinbase_cryptos_list.json
+[2026-02-03 00:16:40] [INFO] Configuration chargée: 3 cryptos disponibles
+[2026-02-03 00:16:40] [INFO] Initialisation terminée avec succès
+[2026-02-03 00:16:40] [INFO] Application prête
+[2026-02-03 00:18:00] [INFO] Arrêt demandé par utilisateur
+[2026-02-03 00:18:00] [INFO] Connexion base de données fermée
+[2026-02-03 00:18:00] [INFO] === FIN KIPACOIN ===

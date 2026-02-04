@@ -1,0 +1,20 @@
+{
+  "exchange": "coinbase",
+  "cryptos": [
+    {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "product_id": "BTC-USDC"
+    },
+    {
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "product_id": "ETH-USDC"
+    },
+    {
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "product_id": "USDC-USD"
+    }
+  ]
+}
