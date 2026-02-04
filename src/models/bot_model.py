@@ -30,7 +30,7 @@ class BotModel:
         try:
             # Récupérer l'exchange_id
             self.db.cursor.execute(
-                "SELECT id FROM exchanges WHERE name = ?",
+                "SELECT exchange_id FROM exchanges WHERE name = ?",
                 (exchange_name.lower(),)
             )
             exchange_result = self.db.cursor.fetchone()
@@ -90,7 +90,7 @@ class BotModel:
                     b.type_ordre, b.is_active, b.created_at,
                     e.display_name as exchange_name
                 FROM bots b
-                JOIN exchanges e ON b.exchange_id = e.id
+                JOIN exchanges e ON b.fk_exchange_id = e.exchange_id
                 WHERE b.account_id = ?
                 ORDER BY b.created_at DESC
             """
@@ -101,7 +101,7 @@ class BotModel:
             bots = []
             for row in rows:
                 bots.append({
-                    'id': row[0],
+                    'bot_id': row[0],
                     'crypto_source': row[1],
                     'crypto_target': row[2],
                     'product_id': row[3],
@@ -136,7 +136,7 @@ class BotModel:
             query = """
                 UPDATE bots 
                 SET is_active = ?, updated_at = ?
-                WHERE id = ?
+                WHERE botid = ?
             """
             
             self.db.cursor.execute(

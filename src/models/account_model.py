@@ -34,7 +34,7 @@ class AccountModel:
             cursor = conn.cursor()
             
             cursor.execute(
-                "SELECT id FROM accounts WHERE username = ?",
+                "SELECT account_id FROM accounts WHERE username = ?",
                 (username,)
             )
             
@@ -109,7 +109,7 @@ class AccountModel:
             
             # Chercher l'utilisateur
             cursor.execute(
-                "SELECT id, username, password_hash, email, nom, prenom FROM accounts WHERE username = ?",
+                "SELECT account_id, username, password_hash, email, nom, prenom FROM accounts WHERE username = ?",
                 (username,)
             )
             
@@ -167,7 +167,7 @@ class AccountModel:
             cursor = conn.cursor()
             
             cursor.execute(
-                "SELECT id, username, email, nom, prenom FROM accounts WHERE id = ?",
+                "SELECT account_id, username, email, nom, prenom FROM accounts WHERE id = ?",
                 (account_id,)
             )
             
@@ -289,7 +289,7 @@ class AccountModel:
             
             # Mettre à jour
             cursor.execute(
-                "UPDATE accounts SET password_hash = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?",
+                "UPDATE accounts SET password_hash = ?, updated_at = CURRENT_TIMESTAMP WHERE account_id = ?",
                 (new_hash, account_id)
             )
             
