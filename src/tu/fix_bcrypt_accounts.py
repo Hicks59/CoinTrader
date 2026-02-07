@@ -153,7 +153,7 @@ def create_test_account():
         nom = "Test"
         prenom = "User"
         
-        print(f"Création du compte:")
+        print(f"  Création du compte:")
         print(f"  Username: {username}")
         print(f"  Password: {password}")
         print(f"  Email: {email}")
