@@ -28,7 +28,7 @@ class PlatformsView:
         main_row = tk.Frame(self.container, bg=self.theme['bg_primary'])
         main_row.pack(fill='both', expand=True)
 
-        # Left: liste des exchanges + ajout manuel
+        # Left: liste des exchanges
         left = tk.Frame(main_row, bg=self.theme['bg_secondary'])
         left.pack(side='left', fill='both', expand=True, padx=(0, 10), pady=10)
 
@@ -38,16 +38,7 @@ class PlatformsView:
         self.exchange_listbox.pack(fill='both', expand=True, padx=10, pady=(0, 10))
         self.exchange_listbox.bind('<<ListboxSelect>>', self._on_exchange_select)
 
-        add_frame = tk.Frame(left, bg=self.theme['bg_secondary'])
-        add_frame.pack(fill='x', padx=10)
-
-        self.new_exchange_name = Input.text(add_frame, self.theme, placeholder="identifiant (ex: coinbase)")
-        self.new_exchange_name.pack(fill='x', pady=(0,6))
-        self.new_exchange_display = Input.text(add_frame, self.theme, placeholder="Nom affiché (ex: Coinbase)")
-        self.new_exchange_display.pack(fill='x', pady=(0,6))
-
-        add_btn = Button.primary(add_frame, "➕ Ajouter plateforme", self._add_exchange, self.theme)
-        add_btn.pack(fill='x')
+        # NOTE: ajout manuel désactivé — seules les plateformes existantes sont listées
 
         # Right: API keys pour l'utilisateur
         right = tk.Frame(main_row, bg=self.theme['bg_secondary'])
