@@ -60,6 +60,9 @@ temp/
 
 # Environment / secrets
 .env
+configs/.secret.key
+configs/app_config.json.enc
+configs/app_config.json
 
 # Misc
 *.log
