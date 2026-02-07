@@ -1,5 +1,6 @@
 from src.models.database_model import DatabaseModel
 from datetime import datetime
+from src.utils.crypto_utils import encrypt_secret, decrypt_secret
 
 class ApiKeyModel:
     """Gère les exchanges et les clés API liées aux comptes"""
@@ -52,25 +53,32 @@ class ApiKeyModel:
             """
             self.db.cursor.execute(query, (user_id,))
             rows = self.db.cursor.fetchall()
-            return [
-                {
+            result = []
+            for row in rows:
+                try:
+                    secret_decrypted = decrypt_secret(row[4]) if row[4] else ''
+                except Exception:
+                    secret_decrypted = ''
+                result.append({
                     "api_key_id": row[0],
                     "account_id": row[1],
                     "exchange_id": row[2],
                     "api_key": row[3],
-                    "api_secret": row[4],
+                    "api_secret": secret_decrypted,
                     "exchange_display": row[5]
-                } for row in rows
-            ]
+                })
+            return result
         except Exception as e:
             self.db.logger.log_error(f"Erreur récupération api keys: {e}")
             return []
 
     def add_api_key(self, account_id, exchange_id, api_key, api_secret):
         try:
+            # Chiffrer le secret avant stockage
+            secret_encrypted = encrypt_secret(api_secret) if api_secret else ''
             self.db.cursor.execute(
                 "INSERT INTO api_keys (account_id, fk_exchange_id, api_key, api_secret, created_at) VALUES (?, ?, ?, ?, ?)",
-                (account_id, exchange_id, api_key, api_secret, datetime.now())
+                (account_id, exchange_id, api_key, secret_encrypted, datetime.now())
             )
             self.db.connection.commit()
             return True, "Clé API ajoutée"
