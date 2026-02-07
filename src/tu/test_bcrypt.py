@@ -15,9 +15,9 @@ def connect_with_retry(db_path=DB_PATH, max_retries=3):
                     print(f"⏳ BDD verrouillée, nouvelle tentative dans 2s... ({attempt + 1}/{max_retries})")
                     time.sleep(2)
                 else:
-                    raise Exception("❌ ERREUR: Base de données verrouillée!\n\n"
-                                  "➡️ Fermez l'application CoinTrader et réessayez.\n"
-                                  "➡️ Vérifiez qu'aucun processus Python ne tourne (Gestionnaire des tâches)")
+                    raise RuntimeError("❌ ERREUR: Base de données verrouillée!\n\n"
+                                     "➡️ Fermez l'application CoinTrader et réessayez.\n"
+                                     "➡️ Vérifiez qu'aucun processus Python ne tourne (Gestionnaire des tâches)")
             else:
                 raise
     return None
@@ -175,7 +175,7 @@ def create_test_account():
         nom = "Test"
         prenom = "User"
         
-        print(f"Création du compte:")
+        print("Création du compte:")
         print(f"  Username: {username}")
         print(f"  Password: {password}")
         print(f"  Email: {email}")
