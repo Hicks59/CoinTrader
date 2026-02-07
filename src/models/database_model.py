@@ -5,7 +5,7 @@ from src.utils.db_logger import DbLogger
 class DatabaseModel:
     """Gestion de la connexion et initialisation de la base de données SQLite"""
     
-    def __init__(self, db_path="datas/kipacoin.db"):
+    def __init__(self, db_path="datas/cointrader.db"):
         """
         Initialise la connexion à la base de données
         

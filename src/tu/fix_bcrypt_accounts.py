@@ -4,10 +4,10 @@ from datetime import datetime
 
 def analyze_account():
     """Analyse le compte problématique"""
-    print("=== ANALYSE COMPTE KIPACOIN ===\n")
+    print("=== ANALYSE COMPTE COINTRADER ===\n")
     
     try:
-        conn = sqlite3.connect('datas/kipacoin.db')
+        conn = sqlite3.connect('datas/cointrader.db')
         cursor = conn.cursor()
         
         # Récupérer tous les comptes
@@ -51,7 +51,7 @@ def fix_account_password():
     print("\n=== CORRECTION MOT DE PASSE ===\n")
     
     try:
-        conn = sqlite3.connect('datas/kipacoin.db')
+        conn = sqlite3.connect('datas/cointrader.db')
         cursor = conn.cursor()
         
         # Lister les comptes
@@ -130,7 +130,7 @@ def create_test_account():
     print("\n=== CRÉATION COMPTE DE TEST ===\n")
     
     try:
-        conn = sqlite3.connect('datas/kipacoin.db')
+        conn = sqlite3.connect('datas/cointrader.db')
         cursor = conn.cursor()
         
         # Vérifier si le compte test existe
@@ -149,7 +149,7 @@ def create_test_account():
         # Créer le compte test
         username = "test"
         password = "test123"
-        email = "test@kipacoin.com"
+        email = "test@CoinTrader.com"
         nom = "Test"
         prenom = "User"
         
@@ -200,7 +200,7 @@ def main_menu():
     """Menu principal"""
     while True:
         print("\n" + "="*50)
-        print("KIPACOIN - DIAGNOSTIC & CORRECTION BCRYPT")
+        print("CoinTrader - DIAGNOSTIC & CORRECTION BCRYPT")
         print("="*50)
         print("\n1. Analyser les comptes existants")
         print("2. Corriger le mot de passe d'un compte")

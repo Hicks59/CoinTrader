@@ -1,7 +1,7 @@
 from src.models.account_model import AccountModel
 
 # Constantes - Messages d'erreur
-MSG_ERROR_MISSING_FIELDS = 'Veuillez remplir tous les champs'
+MSG_ERROR_MISSING_FIELDS = 'Veuillez remplir tous les champs obligatoires'
 MSG_ERROR_PASSWORD_MISMATCH = 'Les mots de passe ne correspondent pas'
 MSG_ERROR_USERNAME_EXISTS = 'Ce nom d\'utilisateur existe déjà'
 MSG_ERROR_REGISTRATION_FAILED = 'Erreur lors de la création du compte'
@@ -23,7 +23,7 @@ class AccountController:
     def __init__(self):
         self.account_model = AccountModel()
     
-    def register(self, username, password, confirm_password, email='', nom='', prenom=''):
+    def register(self, username, password, confirm_password, email, nom, prenom):
         """
         Enregistre un nouveau compte utilisateur
         
@@ -38,8 +38,15 @@ class AccountController:
         Returns:
             dict: {'success': bool, 'message': str}
         """
-        # Validation : champs vides
-        if not username or not password or not confirm_password:
+        # Validation : tous les champs sont obligatoires
+        if not username or not password or not confirm_password or not email or not nom or not prenom:
+            return {
+                'success': False,
+                'message': MSG_ERROR_MISSING_FIELDS
+            }
+        
+        # Validation : espaces uniquement
+        if not username.strip() or not email.strip() or not nom.strip() or not prenom.strip():
             return {
                 'success': False,
                 'message': MSG_ERROR_MISSING_FIELDS
@@ -59,16 +66,14 @@ class AccountController:
                 'message': MSG_ERROR_USERNAME_EXISTS
             }
         
-        # Valeurs par défaut si non fournies
-        if not email:
-            email = f"{username}@kipacoin.local"
-        if not nom:
-            nom = username
-        if not prenom:
-            prenom = "User"
-        
         # Créer le compte
-        result = self.account_model.create_account(username, password, email, nom, prenom)
+        result = self.account_model.create_account(
+            username.strip(), 
+            password, 
+            email.strip(), 
+            nom.strip(), 
+            prenom.strip()
+        )
         
         if result['success']:
             return {
@@ -142,6 +147,35 @@ class AccountController:
             dict: {'success': bool, 'message': str, 'updated_data': dict}
         """
         try:
+            # Validation : tous les champs sont obligatoires
+            if username is not None and not username.strip():
+                return {
+                    'success': False,
+                    'message': MSG_ERROR_MISSING_FIELDS,
+                    'updated_data': None
+                }
+            
+            if email is not None and not email.strip():
+                return {
+                    'success': False,
+                    'message': MSG_ERROR_MISSING_FIELDS,
+                    'updated_data': None
+                }
+            
+            if nom is not None and not nom.strip():
+                return {
+                    'success': False,
+                    'message': MSG_ERROR_MISSING_FIELDS,
+                    'updated_data': None
+                }
+            
+            if prenom is not None and not prenom.strip():
+                return {
+                    'success': False,
+                    'message': MSG_ERROR_MISSING_FIELDS,
+                    'updated_data': None
+                }
+            
             # Récupérer les données actuelles
             current_user = self.account_model.get_user_by_id(account_id)
             
@@ -155,16 +189,16 @@ class AccountController:
             # Vérifier si au moins un champ a été modifié
             has_changes = False
             
-            if username is not None and username != current_user['username']:
+            if username is not None and username.strip() != current_user['username']:
                 has_changes = True
             
-            if email is not None and email != current_user['email']:
+            if email is not None and email.strip() != current_user['email']:
                 has_changes = True
             
-            if nom is not None and nom != current_user['nom']:
+            if nom is not None and nom.strip() != current_user['nom']:
                 has_changes = True
             
-            if prenom is not None and prenom != current_user['prenom']:
+            if prenom is not None and prenom.strip() != current_user['prenom']:
                 has_changes = True
             
             # Si aucun changement détecté

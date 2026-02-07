@@ -13,6 +13,9 @@ class CryptoModel:
         self.cryptos = []
         self.crypto_details = {}  # {symbol: {name, product_id}}
         self.load_cryptos()
+        
+        # Cache pour les modèles d'exchange
+        self._exchange_models = {}
     
     def load_cryptos(self):
         """Charge les cryptos depuis les fichiers JSON"""
@@ -52,6 +55,70 @@ class CryptoModel:
             print(f"✗ Erreur chargement cryptos: {e}")
             self.cryptos = []
             self.crypto_details = {}
+    
+    def _get_exchange_model(self, exchange_name):
+        """Récupère ou crée une instance du modèle d'exchange"""
+        exchange_name = exchange_name.lower()
+        
+        if exchange_name not in self._exchange_models:
+            if exchange_name == 'coinbase':
+                from src.models.exchanges.coinbase_model import CoinbaseModel
+                self._exchange_models[exchange_name] = CoinbaseModel()
+            else:
+                print(f"⚠ Exchange '{exchange_name}' non supporté")
+                return None
+        
+        return self._exchange_models.get(exchange_name)
+    
+    def get_crypto_price(self, symbol, exchange_name='coinbase', quote_currency='USDC'):
+        """
+        Récupère le prix actuel d'une crypto depuis un exchange
+        
+        Args:
+            symbol (str): Symbole de la crypto (ex: 'BTC')
+            exchange_name (str): Nom de l'exchange (ex: 'coinbase')
+            quote_currency (str): Devise de cotation (ex: 'USDC')
+            
+        Returns:
+            float: Prix actuel ou None si erreur
+        """
+        try:
+            exchange_model = self._get_exchange_model(exchange_name)
+            
+            if exchange_model is None:
+                return None
+            
+            price = exchange_model.get_crypto_price(symbol, quote_currency)
+            return price
+            
+        except Exception as e:
+            print(f"✗ Erreur récupération prix {symbol}: {e}")
+            return None
+    
+    def get_available_balance(self, symbol, exchange_name='coinbase', account_id=None):
+        """
+        Récupère le solde disponible d'une crypto depuis un exchange
+        
+        Args:
+            symbol (str): Symbole de la crypto (ex: 'USDC')
+            exchange_name (str): Nom de l'exchange (ex: 'coinbase')
+            account_id: Identifiant du compte utilisateur
+            
+        Returns:
+            float: Solde disponible ou None si erreur
+        """
+        try:
+            exchange_model = self._get_exchange_model(exchange_name)
+            
+            if exchange_model is None:
+                return None
+            
+            balance = exchange_model.get_available_balance(symbol, account_id)
+            return balance
+            
+        except Exception as e:
+            print(f"✗ Erreur récupération balance {symbol}: {e}")
+            return None
     
     def get_all_symbols(self):
         """Retourne la liste de tous les symboles disponibles"""

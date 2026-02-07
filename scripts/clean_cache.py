@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script de nettoyage du cache de l'application Kipacoin
+Script de nettoyage du cache de l'application CoinTrader
 Usage: python clean_cache.py [options]
 """
 import os
@@ -10,7 +10,7 @@ from pathlib import Path
 from datetime import datetime, timedelta
 
 class CacheCleaner:
-    """Nettoyeur de cache pour Kipacoin"""
+    """Nettoyeur de cache pour CoinTrader"""
     
     def __init__(self, verbose=True):
         self.verbose = verbose
@@ -192,7 +192,7 @@ class CacheCleaner:
             keep_logs_days (int): Nombre de jours de logs à conserver
             archive (bool): Archiver les logs avant nettoyage
         """
-        self.log("\n🧹 NETTOYAGE DU CACHE KIPACOIN\n")
+        self.log("\n🧹 NETTOYAGE DU CACHE CoinTrader\n")
         
         if archive:
             self.archive_logs()
@@ -206,7 +206,7 @@ class CacheCleaner:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Nettoie le cache de l\'application Kipacoin'
+        description='Nettoie le cache de l\'application CoinTrader'
     )
     parser.add_argument(
         '--pycache-only',

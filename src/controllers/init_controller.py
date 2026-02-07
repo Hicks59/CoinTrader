@@ -6,7 +6,7 @@ class InitController:
     """Controller pour l'initialisation de l'application"""
     
     def __init__(self):
-        self.db_path = 'datas/kipacoin.db'
+        self.db_path = 'datas/cointrader.db'
         self.sql_init_file = 'database/init_database.sql'
         self.log_dir = 'logs'
         self.data_dir = 'datas'
