@@ -23,7 +23,7 @@ class DashboardView:
         # Contenu du dashboard à implémenter
         tk.Label(
             self.parent_frame,
-            text="Bienvenue sur KipaCoin !\n\nVotre tableau de bord sera bientôt disponible.",
+            text="Bienvenue sur CoinTrader !\n\nVotre tableau de bord sera bientôt disponible.",
             font=(self.FONT_FAMILY, 11),
             bg=self.theme['bg_primary'],
             fg=self.theme['text_secondary'],

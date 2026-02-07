@@ -1,5 +1,6 @@
 import tkinter as tk
 from src.controllers.account_controller import AccountController
+from src.components.ui_component import Button
 
 class LoginView:
     """Vue de connexion"""
@@ -11,7 +12,7 @@ class LoginView:
         self.on_show_signup = on_show_signup
         
         self.FONT_FAMILY = "Segoe UI"
-        self.APP_NAME = "KipaCoin"
+        self.APP_NAME = "CoinTrader"
         self.APP_VERSION = "1.0.0"
         
         self.render()

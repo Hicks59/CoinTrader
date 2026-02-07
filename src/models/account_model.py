@@ -2,7 +2,7 @@ import sqlite3
 import bcrypt
 
 # Constantes
-DB_PATH = 'datas/kipacoin.db'
+DB_PATH = 'datas/cointrader.db'
 
 class AccountModel:
     """Modèle pour gérer les comptes utilisateurs en base de données"""
@@ -167,7 +167,7 @@ class AccountModel:
             cursor = conn.cursor()
             
             cursor.execute(
-                "SELECT account_id, username, email, nom, prenom FROM accounts WHERE id = ?",
+                "SELECT account_id, username, email, nom, prenom FROM accounts WHERE account_id = ?",
                 (account_id,)
             )
             
@@ -237,7 +237,7 @@ class AccountModel:
             params.append(account_id)
             
             # Exécuter la requête
-            query = f"UPDATE accounts SET {', '.join(updates)} WHERE id = ?"
+            query = f"UPDATE accounts SET {', '.join(updates)} WHERE account_id = ?"
             cursor.execute(query, params)
             
             conn.commit()
@@ -267,7 +267,7 @@ class AccountModel:
             
             # Récupérer le hash actuel
             cursor.execute(
-                "SELECT password_hash FROM accounts WHERE id = ?",
+                "SELECT password_hash FROM accounts WHERE account_id = ?",
                 (account_id,)
             )
             

@@ -2,8 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from src.controllers.bot_controller import BotController
 from src.models.crypto_model import CryptoModel
+from src.components.ui_component import Label, FormField, Separator, Input, Button
 
-# Constantes
 FONT_FAMILY = "Segoe UI"
 
 # Messages d'affichage
@@ -23,7 +23,7 @@ MSG_WARNING_AMOUNT_LIMITED = "⚠ Montant limité à {balance:.2f} (solde dispon
 MSG_INFO_SAVE_DEV = "⚠ Fonctionnalité d'enregistrement en cours de développement"
 
 class BotFormView:
-    """Vue du formulaire d'ajout de bot - Version moderne"""
+    """Vue du formulaire d'ajout de bot"""
     
     def __init__(self, parent_frame, theme, user_data, on_back_callback, on_success_callback):
         self.parent_frame = parent_frame
@@ -58,29 +58,26 @@ class BotFormView:
         # Header avec titre et bouton retour
         self._create_header()
         
-        # Carte du formulaire avec ombre
+        # Carte du formulaire
         self._create_form_card()
     
     def _create_header(self):
         """Crée le header avec titre et bouton retour"""
         header_frame = tk.Frame(self.parent_frame, bg=self.theme['bg_primary'])
-        header_frame.pack(fill='x', pady=(0, 25))
+        header_frame.pack(fill='x', pady=(0, 15))
         
-        # Bouton retour stylisé
+        # Bouton retour
         back_btn = tk.Button(
             header_frame,
             text="←",
-            font=(FONT_FAMILY, 16),
+            font=(FONT_FAMILY, 18, 'bold'),
             bg=self.theme['bg_secondary'],
             fg=self.theme['text_primary'],
-            activebackground=self.theme['bg_primary'],
             relief='flat',
             cursor='hand2',
-            command=self.on_back_callback,
-            width=3,
-            height=1
+            command=self.on_back_callback
         )
-        back_btn.pack(side='left', padx=(0, 20))
+        back_btn.pack(side='left', padx=(0, 20), ipadx=10, ipady=8)
         
         # Titre avec icône
         title_frame = tk.Frame(header_frame, bg=self.theme['bg_primary'])
@@ -103,13 +100,14 @@ class BotFormView:
         ).pack(side='left')
         
         # Sous-titre
-        tk.Label(
+        help_text = Label.help_text(
             header_frame,
-            text="Configurez votre stratégie de trading automatisée",
-            font=(FONT_FAMILY, 9),
+            "Configurez votre stratégie de trading automatisée",
+            self.theme,
             bg=self.theme['bg_primary'],
-            fg=self.theme['text_secondary']
-        ).pack(side='left', padx=(15, 0))
+            font=(FONT_FAMILY, 9)
+        )
+        help_text.pack(side='left', padx=(15, 0))
     
     def _create_form_card(self):
         """Crée la carte contenant le formulaire"""
@@ -117,7 +115,7 @@ class BotFormView:
         card_container = tk.Frame(self.parent_frame, bg=self.theme['bg_primary'])
         card_container.pack(fill='both', expand=True)
         
-        # Carte principale avec bordure subtile
+        # Carte principale
         form_card = tk.Frame(
             card_container,
             bg=self.theme['bg_secondary'],
@@ -127,67 +125,32 @@ class BotFormView:
         )
         form_card.pack(fill='both', expand=True, padx=2, pady=2)
         
-        # Container avec padding généreux
+        # Container avec padding REDUIT
         form_container = tk.Frame(form_card, bg=self.theme['bg_secondary'])
-        form_container.pack(fill='both', expand=True, padx=40, pady=35)
+        form_container.pack(fill='both', expand=True, padx=40, pady=20)
         
-        # Section 1: Configuration de base - 3 CHAMPS SUR UNE LIGNE
+        # Section 1: Configuration de base
         self._create_section_header(form_container, "⚙️ Configuration de base")
         self._create_base_config_fields(form_container)
         
         # Séparateur
-        self._create_separator(form_container)
+        sep = Separator.horizontal(form_container, self.theme)
+        sep.pack(fill='x', pady=15)
         
-        # Section 2: Stratégie de trading - 3 CHAMPS SUR UNE LIGNE
+        # Section 2: Stratégie de trading
         self._create_section_header(form_container, "📈 Stratégie de trading")
         self._create_strategy_fields(form_container)
         
-        # Footer avec statut et bouton
+        # Footer avec boutons
         self._create_form_footer(form_container)
     
     def _create_section_header(self, parent, text):
         """Crée un en-tête de section"""
-        header = tk.Label(
-            parent,
-            text=text,
-            font=(FONT_FAMILY, 12, 'bold'),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['text_primary'],
-            anchor='w'
-        )
-        header.pack(fill='x', pady=(15, 15))
-    
-    def _create_separator(self, parent):
-        """Crée un séparateur visuel"""
-        sep = tk.Frame(parent, bg=self.theme['border'], height=1)
-        sep.pack(fill='x', pady=25)
-    
-    def _create_field_label(self, parent, text, icon=""):
-        """Crée un label de champ stylisé"""
-        label_frame = tk.Frame(parent, bg=self.theme['bg_secondary'])
-        label_frame.pack(fill='x', pady=(0, 8))
-        
-        if icon:
-            tk.Label(
-                label_frame,
-                text=icon,
-                font=(FONT_FAMILY, 11),
-                bg=self.theme['bg_secondary'],
-                fg=self.theme['accent']
-            ).pack(side='left', padx=(0, 8))
-        
-        tk.Label(
-            label_frame,
-            text=text,
-            font=(FONT_FAMILY, 10, 'bold'),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['text_primary'],
-            anchor='w'
-        ).pack(side='left')
+        header = Label.subtitle(parent, text, self.theme)
+        header.pack(fill='x', pady=(10, 10))  # Réduit de 15 à 10
     
     def _create_base_config_fields(self, parent):
         """Crée les 3 champs de base sur une seule ligne"""
-        # Container pour les 3 colonnes
         row = tk.Frame(parent, bg=self.theme['bg_secondary'])
         row.pack(fill='x', pady=(0, 0))
         
@@ -195,7 +158,8 @@ class BotFormView:
         col1 = tk.Frame(row, bg=self.theme['bg_secondary'])
         col1.pack(side='left', fill='both', expand=True, padx=(0, 10))
         
-        self._create_field_label(col1, "Exchange", "🏦")
+        label1 = Label.field_label(col1, "Exchange", self.theme, icon="🏦")
+        label1.pack(fill='x', pady=(0, 8))
         
         self.bot_entries['exchange'] = ttk.Combobox(
             col1,
@@ -211,7 +175,8 @@ class BotFormView:
         col2 = tk.Frame(row, bg=self.theme['bg_secondary'])
         col2.pack(side='left', fill='both', expand=True, padx=(10, 10))
         
-        self._create_field_label(col2, "Crypto à acheter", "💰")
+        label2 = Label.field_label(col2, "Crypto à acheter", self.theme, icon="💰")
+        label2.pack(fill='x', pady=(0, 8))
         
         self.bot_entries['crypto_source'] = ttk.Combobox(
             col2,
@@ -223,21 +188,15 @@ class BotFormView:
         self.bot_entries['crypto_source'].pack(fill='x', ipady=10)
         self.bot_entries['crypto_source'].bind('<<ComboboxSelected>>', self._on_crypto_source_change)
         
-        # Prix actuel de la crypto
-        self.price_labels['source'] = tk.Label(
-            col2,
-            text=MSG_PRICE_LOADING,
-            font=(FONT_FAMILY, 8),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['accent']
-        )
+        self.price_labels['source'] = Label.help_text(col2, MSG_PRICE_LOADING, self.theme, fg=self.theme['accent'])
         self.price_labels['source'].pack(anchor='w', pady=(5, 0))
         
         # Colonne 3 - Payer avec
         col3 = tk.Frame(row, bg=self.theme['bg_secondary'])
         col3.pack(side='left', fill='both', expand=True, padx=(10, 0))
         
-        self._create_field_label(col3, "Payer avec", "💵")
+        label3 = Label.field_label(col3, "Payer avec", self.theme, icon="💵")
+        label3.pack(fill='x', pady=(0, 8))
         
         self.bot_entries['crypto_target'] = ttk.Combobox(
             col3,
@@ -250,19 +209,11 @@ class BotFormView:
         self.bot_entries['crypto_target'].pack(fill='x', ipady=10)
         self.bot_entries['crypto_target'].bind('<<ComboboxSelected>>', self._on_crypto_target_change)
         
-        # Quantité disponible
-        self.price_labels['target'] = tk.Label(
-            col3,
-            text=MSG_BALANCE_LOADING,
-            font=(FONT_FAMILY, 8),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['accent']
-        )
+        self.price_labels['target'] = Label.help_text(col3, MSG_BALANCE_LOADING, self.theme, fg=self.theme['accent'])
         self.price_labels['target'].pack(anchor='w', pady=(5, 0))
     
     def _create_strategy_fields(self, parent):
         """Crée les 3 champs de stratégie sur une seule ligne"""
-        # Container pour les 3 colonnes
         row = tk.Frame(parent, bg=self.theme['bg_secondary'])
         row.pack(fill='x', pady=(0, 0))
         
@@ -270,87 +221,83 @@ class BotFormView:
         col1 = tk.Frame(row, bg=self.theme['bg_secondary'])
         col1.pack(side='left', fill='both', expand=True, padx=(0, 10))
         
-        self._create_field_label(col1, "Prix d'achat cible", "🎯")
-        
-        price_frame = tk.Frame(col1, bg=self.theme['input_bg'], relief='solid', borderwidth=1)
-        price_frame.pack(fill='x')
-        
-        self.bot_entries['prix_achat'] = tk.Entry(
-            price_frame,
-            font=(FONT_FAMILY, 11),
-            bg=self.theme['input_bg'],
-            fg=self.theme['text_primary'],
-            relief='flat',
-            insertbackground=self.theme['text_primary']
+        field1 = FormField(
+            col1, 
+            "Prix d'achat cible", 
+            self.theme, 
+            icon="🎯",
+            help_text="Optionnel - Prix marché par défaut"
         )
-        self.bot_entries['prix_achat'].pack(fill='x', ipady=10, padx=8)
-        
-        tk.Label(
-            col1,
-            text="Optionnel - Prix marché par défaut",
-            font=(FONT_FAMILY, 8),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['text_secondary']
-        ).pack(anchor='w', pady=(5, 0))
+        field1.pack(fill='x', pady=0)
+        self.bot_entries['prix_achat'] = field1.input
         
         # Colonne 2 - Pourcentage de gain
         col2 = tk.Frame(row, bg=self.theme['bg_secondary'])
         col2.pack(side='left', fill='both', expand=True, padx=(10, 10))
         
-        self._create_field_label(col2, "Objectif de gain (%)", "📊")
-        
-        gain_frame = tk.Frame(col2, bg=self.theme['input_bg'], relief='solid', borderwidth=1)
-        gain_frame.pack(fill='x')
-        
-        self.bot_entries['pourcentage_gain'] = tk.Entry(
-            gain_frame,
-            font=(FONT_FAMILY, 11),
-            bg=self.theme['input_bg'],
-            fg=self.theme['text_primary'],
-            relief='flat',
-            insertbackground=self.theme['text_primary']
-        )
-        self.bot_entries['pourcentage_gain'].pack(fill='x', ipady=10, padx=8)
-        self.bot_entries['pourcentage_gain'].insert(0, "5")
-        
-        tk.Label(
+        field2 = FormField(
             col2,
-            text="Profit visé avant revente",
-            font=(FONT_FAMILY, 8),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['text_secondary']
-        ).pack(anchor='w', pady=(5, 0))
+            "Objectif de gain (%)",
+            self.theme,
+            icon="📊",
+            help_text="Profit visé avant revente"
+        )
+        field2.pack(fill='x', pady=0)
+        field2.set("5")
+        self.bot_entries['pourcentage_gain'] = field2.input
         
         # Colonne 3 - Montant du trade
         col3 = tk.Frame(row, bg=self.theme['bg_secondary'])
         col3.pack(side='left', fill='both', expand=True, padx=(10, 0))
         
-        self._create_field_label(col3, "Montant à investir", "💎")
+        label3 = Label.field_label(col3, "Montant à investir", self.theme, icon="💎")
+        label3.pack(fill='x', pady=(0, 8))
         
         amount_frame = tk.Frame(col3, bg=self.theme['input_bg'], relief='solid', borderwidth=1)
         amount_frame.pack(fill='x')
         
-        self.bot_entries['montant_trade'] = tk.Entry(
+        self.bot_entries['montant_trade'] = Input.text(
             amount_frame,
-            font=(FONT_FAMILY, 11),
-            bg=self.theme['input_bg'],
-            fg=self.theme['text_primary'],
+            self.theme,
             relief='flat',
-            insertbackground=self.theme['text_primary']
+            borderwidth=0
         )
         self.bot_entries['montant_trade'].pack(fill='x', ipady=10, padx=8)
         self.bot_entries['montant_trade'].insert(0, "100")
         self.bot_entries['montant_trade'].bind('<KeyRelease>', self._validate_amount)
         
-        # Quantité estimée
-        self.price_labels['quantity'] = tk.Label(
-            col3,
-            text=MSG_QUANTITY_LOADING,
-            font=(FONT_FAMILY, 8),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['accent']
-        )
+        self.price_labels['quantity'] = Label.help_text(col3, MSG_QUANTITY_LOADING, self.theme, fg=self.theme['accent'])
         self.price_labels['quantity'].pack(anchor='w', pady=(5, 0))
+    
+    def _create_form_footer(self, parent):
+        """Crée le footer avec message de statut et boutons"""
+        footer = tk.Frame(parent, bg=self.theme['bg_secondary'])
+        footer.pack(fill='x', pady=(20, 0))  # Réduit de 30 à 20
+        
+        # Message de statut
+        self.bot_status_label = Label.status(footer, self.theme)
+        self.bot_status_label.pack(fill='x', pady=(0, 10))
+        
+        # Boutons avec composants Button
+        # Bouton Enregistrer (à gauche)
+        save_btn = Button.secondary(
+            footer,
+            "💾 Enregistrer",
+            self.save_bot,
+            self.theme,
+            font=(FONT_FAMILY, 11, 'bold')
+        )
+        save_btn.pack(side='left', ipadx=25, ipady=12)
+        
+        # Bouton Créer le bot (à droite)
+        create_btn = Button.primary(
+            footer,
+            "🚀 Créer le bot",
+            self.create_bot,
+            self.theme,
+            font=(FONT_FAMILY, 11, 'bold')
+        )
+        create_btn.pack(side='right', ipadx=25, ipady=12)
     
     def _on_crypto_source_change(self, event=None):
         """Met à jour le prix quand la crypto source change"""
@@ -359,19 +306,10 @@ class BotFormView:
             price = self._get_crypto_price(crypto)
             
             if price is not None:
-                self.price_labels['source'].config(
-                    text=f"Prix: ${price:,.2f}",
-                    fg=self.theme['accent']
-                )
+                self.price_labels['source'].config(text=f"Prix: ${price:,.2f}", fg=self.theme['accent'])
             else:
-                self.price_labels['source'].config(
-                    text=MSG_PRICE_UNAVAILABLE,
-                    fg='#F44336'
-                )
-                self.bot_status_label.config(
-                    text=MSG_ERROR_PRICE_FETCH,
-                    fg='#FF9800'
-                )
+                self.price_labels['source'].config(text=MSG_PRICE_UNAVAILABLE, fg='#F44336')
+                self.bot_status_label.config(text=MSG_ERROR_PRICE_FETCH, fg='#FF9800')
             
             self._update_quantity_estimate()
     
@@ -388,22 +326,15 @@ class BotFormView:
                 )
                 self.available_balance = balance
             else:
-                self.price_labels['target'].config(
-                    text=MSG_BALANCE_UNAVAILABLE,
-                    fg='#FF9800'
-                )
+                self.price_labels['target'].config(text=MSG_BALANCE_UNAVAILABLE, fg='#FF9800')
                 self.available_balance = 0.0
-                self.bot_status_label.config(
-                    text=MSG_ERROR_BALANCE_FETCH,
-                    fg='#FF9800'
-                )
+                self.bot_status_label.config(text=MSG_ERROR_BALANCE_FETCH, fg='#FF9800')
     
     def _validate_amount(self, event=None):
         """Valide et limite le montant du trade"""
         try:
             amount = float(self.bot_entries['montant_trade'].get())
             
-            # Limiter au solde disponible
             if amount > self.available_balance and self.available_balance > 0:
                 self.bot_entries['montant_trade'].delete(0, tk.END)
                 self.bot_entries['montant_trade'].insert(0, str(self.available_balance))
@@ -440,10 +371,7 @@ class BotFormView:
                         fg=self.theme['accent']
                     )
                 else:
-                    self.price_labels['quantity'].config(
-                        text=MSG_QUANTITY_UNAVAILABLE,
-                        fg='#F44336'
-                    )
+                    self.price_labels['quantity'].config(text=MSG_QUANTITY_UNAVAILABLE, fg='#F44336')
             else:
                 self.price_labels['quantity'].config(text=MSG_QUANTITY_LOADING)
                 
@@ -474,124 +402,37 @@ class BotFormView:
         
         return balance
     
-    def _create_form_footer(self, parent):
-        """Crée le footer avec message de statut et boutons"""
-        footer = tk.Frame(parent, bg=self.theme['bg_secondary'])
-        footer.pack(fill='x', pady=(30, 0))
-        
-        # Message de statut
-        self.bot_status_label = tk.Label(
-            footer,
-            text="",
-            font=(FONT_FAMILY, 9),
-            bg=self.theme['bg_secondary'],
-            fg='#4CAF50',
-            anchor='e'
-        )
-        self.bot_status_label.pack(fill='x', pady=(0, 15))
-        
-        # Frame pour les boutons
-        button_frame = tk.Frame(footer, bg=self.theme['bg_secondary'])
-        button_frame.pack(fill='x')
-        
-        # Info box à gauche
-        info_frame = tk.Frame(button_frame, bg=self.theme['bg_primary'], relief='flat')
-        info_frame.pack(side='left', fill='y', padx=(0, 20))
-        
-        tk.Label(
-            info_frame,
-            text="ℹ️",
-            font=(FONT_FAMILY, 12),
-            bg=self.theme['bg_primary'],
-            fg=self.theme['accent']
-        ).pack(side='left', padx=(10, 8), pady=10)
-        
-        tk.Label(
-            info_frame,
-            text="Le bot surveillera automatiquement\nle marché 24/7",
-            font=(FONT_FAMILY, 8),
-            bg=self.theme['bg_primary'],
-            fg=self.theme['text_secondary'],
-            justify='left'
-        ).pack(side='left', padx=(0, 10), pady=10)
-        
-        # Boutons à droite
-        buttons_right = tk.Frame(button_frame, bg=self.theme['bg_secondary'])
-        buttons_right.pack(side='right')
-        
-        # Bouton Enregistrer (sans créer)
-        save_btn = tk.Button(
-            buttons_right,
-            text="💾 Enregistrer",
-            font=(FONT_FAMILY, 11, 'bold'),
-            bg=self.theme['bg_secondary'],
-            fg=self.theme['text_primary'],
-            activebackground=self.theme['bg_primary'],
-            relief='solid',
-            borderwidth=1,
-            cursor='hand2',
-            command=self.save_bot
-        )
-        save_btn.pack(side='left', ipadx=30, ipady=14, padx=(0, 10))
-        
-        # Bouton Créer (action principale)
-        create_btn = tk.Button(
-            buttons_right,
-            text="🚀 Créer le bot",
-            font=(FONT_FAMILY, 12, 'bold'),
-            bg=self.theme['accent'],
-            fg=self.theme['button_text'],
-            activebackground='#45a049',
-            relief='flat',
-            cursor='hand2',
-            command=self.create_bot
-        )
-        create_btn.pack(side='left', ipadx=40, ipady=16)
-    
     def save_bot(self):
         """Enregistre le bot sans l'activer"""
-        self.bot_status_label.config(
-            text=MSG_INFO_SAVE_DEV,
-            fg='#FF9800'
-        )
+        self.bot_status_label.config(text=MSG_INFO_SAVE_DEV, fg='#FF9800')
     
     def create_bot(self):
         """Crée un nouveau bot de trading"""
-        # Vérifier que les prix sont disponibles avant de créer le bot
         crypto_source = self.bot_entries['crypto_source'].get()
         
         if not crypto_source:
-            self.bot_status_label.config(
-                text=MSG_ERROR_NO_CRYPTO,
-                fg='#F44336'
-            )
+            self.bot_status_label.config(text=MSG_ERROR_NO_CRYPTO, fg='#F44336')
             return
         
-        # Vérifier que le prix est disponible
         price = self._get_crypto_price(crypto_source)
         if price is None:
-            self.bot_status_label.config(
-                text=MSG_ERROR_CREATE_BOT_NO_PRICE,
-                fg='#F44336'
-            )
+            self.bot_status_label.config(text=MSG_ERROR_CREATE_BOT_NO_PRICE, fg='#F44336')
             return
         
-        # Récupérer les valeurs
         exchange = self.bot_entries['exchange'].get()
         crypto_target = self.bot_entries['crypto_target'].get()
         prix_achat = self.bot_entries['prix_achat'].get()
         pourcentage_gain = self.bot_entries['pourcentage_gain'].get()
         montant_trade = self.bot_entries['montant_trade'].get()
-        
-        # Type d'ordre par défaut
+        product_id = f"{crypto_source}-{crypto_target}"
         type_ordre = "Market"
         
-        # Utiliser le controller
         try:
             bot_controller = BotController()
             result = bot_controller.create_bot(
                 user_id=self.user_data['id'],
                 exchange=exchange,
+                product_id=product_id,
                 crypto_source=crypto_source,
                 crypto_target=crypto_target,
                 prix_achat=prix_achat,
@@ -602,7 +443,6 @@ class BotFormView:
             
             if result['success']:
                 self.bot_status_label.config(text=f"✓ {result['message']}", fg='#4CAF50')
-                # Retour à la liste après 1.5 secondes
                 self.parent_frame.after(1500, self.on_success_callback)
             else:
                 self.bot_status_label.config(text=f"✗ {result['message']}", fg='#F44336')

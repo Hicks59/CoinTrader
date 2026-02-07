@@ -2,7 +2,7 @@ import os
 import tkinter as tk
 from tkinter import messagebox
 
-APP_NAME = "KipaCoin"
+APP_NAME = "CoinTrader"
 APP_VERSION = "1.0.0"
 FONT_FAMILY = "Segoe UI"
 TK_CENTER_WINDOW = "tk::PlaceWindow . center"
@@ -451,7 +451,7 @@ if __name__ == "__main__":
                 shutil.rmtree(pycache_path)
                 cache_count += 1
         if cache_count > 0:
-            print(f"✓ {cache_count} dossier(s) cache supprimé(s)")
+            print(f"✓ {cache_count} dossier(s) cache supprimés")
         else:
             print("✓ Aucun cache à nettoyer")
     except Exception as e:

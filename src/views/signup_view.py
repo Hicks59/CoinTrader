@@ -12,7 +12,7 @@ class SignupView:
         self.on_show_login = on_show_login
         
         self.FONT_FAMILY = "Segoe UI"
-        self.APP_NAME = "KipaCoin"
+        self.APP_NAME = "CoinTrader"
         
         self.render()
     
@@ -40,13 +40,13 @@ class SignupView:
         form_frame = tk.Frame(main_frame, bg=self.theme['bg_primary'])
         form_frame.pack(fill='x')
         
-        # Champs
-        self.username_entry = self._create_field(form_frame, "Nom d'utilisateur")
-        self.email_entry = self._create_field(form_frame, "Email")
-        self.nom_entry = self._create_field(form_frame, "Nom")
-        self.prenom_entry = self._create_field(form_frame, "Prénom")
-        self.password_entry = self._create_field(form_frame, "Mot de passe", show='•')
-        self.confirm_password_entry = self._create_field(form_frame, "Confirmer le mot de passe", show='•')
+        # Champs avec astérisques
+        self.username_entry = self._create_field(form_frame, "Nom d'utilisateur *")
+        self.email_entry = self._create_field(form_frame, "Email *")
+        self.nom_entry = self._create_field(form_frame, "Nom *")
+        self.prenom_entry = self._create_field(form_frame, "Prénom *")
+        self.password_entry = self._create_field(form_frame, "Mot de passe *", show='•')
+        self.confirm_password_entry = self._create_field(form_frame, "Confirmer le mot de passe *", show='•')
         
         # Message d'erreur
         self.error_label = tk.Label(
@@ -90,14 +90,38 @@ class SignupView:
     
     def _create_field(self, parent, label_text, show=None):
         """Crée un champ de formulaire"""
+        # Frame pour le label avec astérisque
+        label_frame = tk.Frame(parent, bg=self.theme['bg_primary'])
+        label_frame.pack(fill='x', pady=(10, 5))
+        
+        # Séparer le texte et l'astérisque
+        if label_text.endswith(' *'):
+            text_without_star = label_text[:-2]
+            has_star = True
+        else:
+            text_without_star = label_text
+            has_star = False
+        
+        # Label principal
         tk.Label(
-            parent,
-            text=label_text,
+            label_frame,
+            text=text_without_star,
             font=(self.FONT_FAMILY, 10),
             bg=self.theme['bg_primary'],
             fg=self.theme['text_primary'],
             anchor='w'
-        ).pack(fill='x', pady=(10, 5))
+        ).pack(side='left')
+        
+        # Astérisque en rouge
+        if has_star:
+            tk.Label(
+                label_frame,
+                text=" *",
+                font=(self.FONT_FAMILY, 10, 'bold'),
+                bg=self.theme['bg_primary'],
+                fg='#F44336',
+                anchor='w'
+            ).pack(side='left')
         
         entry = tk.Entry(
             parent,
@@ -115,7 +139,7 @@ class SignupView:
     def signup(self):
         """Traite l'inscription"""
         account_controller = AccountController()
-        result = account_controller.create_account(
+        result = account_controller.register(
             username=self.username_entry.get(),
             password=self.password_entry.get(),
             confirm_password=self.confirm_password_entry.get(),
@@ -126,6 +150,12 @@ class SignupView:
         
         if result['success']:
             messagebox.showinfo("Succès", result['message'])
-            self.on_success(result['user_data'])
+            # Se connecter automatiquement avec le compte créé
+            login_result = account_controller.login(
+                username=self.username_entry.get(),
+                password=self.password_entry.get()
+            )
+            if login_result['success']:
+                self.on_success(login_result['user_data'])
         else:
             self.error_label.config(text=result['message'])
