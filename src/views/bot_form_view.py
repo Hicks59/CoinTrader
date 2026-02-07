@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 from src.controllers.bot_controller import BotController
 from src.models.crypto_model import CryptoModel
 from src.components.ui_component import Label, FormField, Separator, Input, Button
@@ -279,25 +279,15 @@ class BotFormView:
         self.bot_status_label.pack(fill='x', pady=(0, 10))
         
         # Boutons avec composants Button
-        # Bouton Enregistrer (à gauche)
-        save_btn = Button.secondary(
+        # Bouton Enregistrer (unique)
+        register_btn = Button.primary(
             footer,
             "💾 Enregistrer",
-            self.save_bot,
+            self.register_bot,
             self.theme,
             font=(FONT_FAMILY, 11, 'bold')
         )
-        save_btn.pack(side='left', ipadx=25, ipady=12)
-        
-        # Bouton Créer le bot (à droite)
-        create_btn = Button.primary(
-            footer,
-            "🚀 Créer le bot",
-            self.create_bot,
-            self.theme,
-            font=(FONT_FAMILY, 11, 'bold')
-        )
-        create_btn.pack(side='right', ipadx=25, ipady=12)
+        register_btn.pack(side='right', ipadx=25, ipady=12)
     
     def _on_crypto_source_change(self, event=None):
         """Met à jour le prix quand la crypto source change"""
@@ -406,8 +396,8 @@ class BotFormView:
         """Enregistre le bot sans l'activer"""
         self.bot_status_label.config(text=MSG_INFO_SAVE_DEV, fg='#FF9800')
     
-    def create_bot(self):
-        """Crée un nouveau bot de trading"""
+    def register_bot(self):
+        """Enregistre le bot et demande si l'activer"""
         crypto_source = self.bot_entries['crypto_source'].get()
         
         if not crypto_source:
@@ -442,11 +432,67 @@ class BotFormView:
             )
             
             if result['success']:
-                self.bot_status_label.config(text=f"✓ {result['message']}", fg='#4CAF50')
-                self.parent_frame.after(1500, self.on_success_callback)
+                # Afficher popup de confirmation d'activation
+                self._show_activation_popup()
             else:
                 self.bot_status_label.config(text=f"✗ {result['message']}", fg='#F44336')
                 
         except Exception as e:
             print(f"✗ Erreur création bot: {e}")
             self.bot_status_label.config(text=f"✗ Erreur: {str(e)}", fg='#F44336')
+    
+    def _show_activation_popup(self):
+        """Affiche une popup pour demander l'activation du bot"""
+        # Créer une fenêtre popup
+        popup = tk.Toplevel(self.parent_frame)
+        popup.title("Activer le bot")
+        popup.resizable(False, False)
+        popup.attributes('-topmost', True)
+        
+        # Centrer la popup
+        popup.geometry("350x150")
+        popup.configure(bg=self.theme['bg_primary'])
+        
+        # Message
+        msg_frame = tk.Frame(popup, bg=self.theme['bg_primary'])
+        msg_frame.pack(fill='both', expand=True, padx=20, pady=20)
+        
+        msg_label = tk.Label(
+            msg_frame,
+            text="Voulez-vous activer ce bot maintenant ?",
+            font=(FONT_FAMILY, 11),
+            bg=self.theme['bg_primary'],
+            fg=self.theme['text_primary'],
+            wraplength=300
+        )
+        msg_label.pack(pady=(0, 20))
+        
+        # Boutons
+        btn_frame = tk.Frame(msg_frame, bg=self.theme['bg_primary'])
+        btn_frame.pack(fill='x')
+        
+        def activate():
+            popup.destroy()
+            self.bot_status_label.config(text="✓ Bot enregistré et activé", fg='#4CAF50')
+            self.parent_frame.after(1500, self.on_success_callback)
+        
+        def deactivate():
+            popup.destroy()
+            self.bot_status_label.config(text="✓ Bot enregistré (désactivé)", fg='#4CAF50')
+            self.parent_frame.after(1500, self.on_success_callback)
+        
+        yes_btn = Button.primary(
+            btn_frame,
+            "✓ Oui",
+            activate,
+            self.theme
+        )
+        yes_btn.pack(side='left', padx=(0, 10))
+        
+        no_btn = Button.secondary(
+            btn_frame,
+            "✗ Non",
+            deactivate,
+            self.theme
+        )
+        no_btn.pack(side='right', padx=(10, 0))
