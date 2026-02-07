@@ -1,13 +1,13 @@
 import bcrypt
-import sqlite3
 from datetime import datetime
+from src.utils.db_connection import get_db_connection, DB_PATH
 
 def analyze_account():
     """Analyse le compte problématique"""
     print("=== ANALYSE COMPTE COINTRADER ===\n")
     
     try:
-        conn = sqlite3.connect('datas/cointrader.db')
+        conn = get_db_connection(DB_PATH)
         cursor = conn.cursor()
         
         # Récupérer tous les comptes
@@ -51,7 +51,7 @@ def fix_account_password():
     print("\n=== CORRECTION MOT DE PASSE ===\n")
     
     try:
-        conn = sqlite3.connect('datas/cointrader.db')
+        conn = get_db_connection(DB_PATH)
         cursor = conn.cursor()
         
         # Lister les comptes
@@ -130,7 +130,7 @@ def create_test_account():
     print("\n=== CRÉATION COMPTE DE TEST ===\n")
     
     try:
-        conn = sqlite3.connect('datas/cointrader.db')
+        conn = get_db_connection(DB_PATH)
         cursor = conn.cursor()
         
         # Vérifier si le compte test existe
@@ -153,7 +153,7 @@ def create_test_account():
         nom = "Test"
         prenom = "User"
         
-        print(f"Création du compte:")
+        print("  Création du compte:")
         print(f"  Username: {username}")
         print(f"  Password: {password}")
         print(f"  Email: {email}")

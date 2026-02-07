@@ -1,6 +1,6 @@
 import os
-import sqlite3
 import shutil
+from src.utils.db_connection import get_db_connection
 
 class InitController:
     """Controller pour l'initialisation de l'application"""
@@ -40,7 +40,7 @@ class InitController:
             os.makedirs(self.data_dir, exist_ok=True)
             
             # Tester la connexion
-            conn = sqlite3.connect(self.db_path)
+            conn = get_db_connection(self.db_path)
             conn.close()
             
             return {
@@ -56,7 +56,7 @@ class InitController:
     def check_tables_exist(self):
         """Vérifie l'existence des tables dans la base de données"""
         try:
-            conn = sqlite3.connect(self.db_path)
+            conn = get_db_connection(self.db_path)
             cursor = conn.cursor()
             
             # Tables requises
@@ -108,7 +108,7 @@ class InitController:
                 sql_script = f.read()
             
             # Exécuter le script
-            conn = sqlite3.connect(self.db_path)
+            conn = get_db_connection(self.db_path)
             cursor = conn.cursor()
             
             cursor.executescript(sql_script)

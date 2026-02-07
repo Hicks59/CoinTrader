@@ -1,8 +1,5 @@
-import sqlite3
 import bcrypt
-
-# Constantes
-DB_PATH = 'datas/cointrader.db'
+from src.utils.db_connection import get_db_context, DB_PATH
 
 class AccountModel:
     """Modèle pour gérer les comptes utilisateurs en base de données"""
@@ -30,18 +27,13 @@ class AccountModel:
             bool: True si existe, False sinon
         """
         try:
-            conn = sqlite3.connect(self.db_path)
-            cursor = conn.cursor()
-            
-            cursor.execute(
-                "SELECT account_id FROM accounts WHERE username = ?",
-                (username,)
-            )
-            
-            result = cursor.fetchone()
-            conn.close()
-            
-            return result is not None
+            with get_db_context(self.db_path) as (conn, cursor):
+                cursor.execute(
+                    "SELECT account_id FROM accounts WHERE username = ?",
+                    (username,)
+                )
+                result = cursor.fetchone()
+                return result is not None
             
         except Exception as e:
             print(f"✗ Erreur vérification username: {e}")
@@ -62,28 +54,23 @@ class AccountModel:
             dict: {'success': bool, 'user_id': int or None, 'error': str or None}
         """
         try:
-            conn = sqlite3.connect(self.db_path)
-            cursor = conn.cursor()
-            
-            # Hasher le mot de passe avec bcrypt
-            hashed_password = self._hash_password(password)
-            
-            # Insérer le nouvel utilisateur
-            cursor.execute(
-                "INSERT INTO accounts (username, password_hash, email, nom, prenom) VALUES (?, ?, ?, ?, ?)",
-                (username, hashed_password, email, nom, prenom)
-            )
-            
-            user_id = cursor.lastrowid
-            
-            conn.commit()
-            conn.close()
-            
-            return {
-                'success': True,
-                'user_id': user_id,
-                'error': None
-            }
+            with get_db_context(self.db_path) as (conn, cursor):
+                # Hasher le mot de passe avec bcrypt
+                hashed_password = self._hash_password(password)
+                
+                # Insérer le nouvel utilisateur
+                cursor.execute(
+                    "INSERT INTO accounts (username, password_hash, email, nom, prenom) VALUES (?, ?, ?, ?, ?)",
+                    (username, hashed_password, email, nom, prenom)
+                )
+                
+                user_id = cursor.lastrowid
+                
+                return {
+                    'success': True,
+                    'user_id': user_id,
+                    'error': None
+                }
             
         except Exception as e:
             return {
@@ -104,46 +91,43 @@ class AccountModel:
             dict: {'success': bool, 'user_data': dict or None, 'error': str or None}
         """
         try:
-            conn = sqlite3.connect(self.db_path)
-            cursor = conn.cursor()
-            
-            # Chercher l'utilisateur
-            cursor.execute(
-                "SELECT account_id, username, password_hash, email, nom, prenom FROM accounts WHERE username = ?",
-                (username,)
-            )
-            
-            user = cursor.fetchone()
-            conn.close()
-            
-            if user:
-                user_id, username_db, stored_hash, email, nom, prenom = user
+            with get_db_context(self.db_path) as (conn, cursor):
+                # Chercher l'utilisateur
+                cursor.execute(
+                    "SELECT account_id, username, password_hash, email, nom, prenom FROM accounts WHERE username = ?",
+                    (username,)
+                )
                 
-                # Vérifier le mot de passe avec bcrypt
-                if self._verify_password(password, stored_hash):
-                    return {
-                        'success': True,
-                        'user_data': {
-                            'id': user_id,
-                            'username': username_db,
-                            'email': email,
-                            'nom': nom,
-                            'prenom': prenom
-                        },
-                        'error': None
-                    }
+                user = cursor.fetchone()
+                
+                if user:
+                    user_id, username_db, stored_hash, email, nom, prenom = user
+                    
+                    # Vérifier le mot de passe avec bcrypt
+                    if self._verify_password(password, stored_hash):
+                        return {
+                            'success': True,
+                            'user_data': {
+                                'id': user_id,
+                                'username': username_db,
+                                'email': email,
+                                'nom': nom,
+                                'prenom': prenom
+                            },
+                            'error': None
+                        }
+                    else:
+                        return {
+                            'success': False,
+                            'user_data': None,
+                            'error': 'invalid_credentials'
+                        }
                 else:
                     return {
                         'success': False,
                         'user_data': None,
                         'error': 'invalid_credentials'
                     }
-            else:
-                return {
-                    'success': False,
-                    'user_data': None,
-                    'error': 'invalid_credentials'
-                }
                 
         except Exception as e:
             return {
@@ -163,27 +147,24 @@ class AccountModel:
             dict or None: Informations de l'utilisateur ou None
         """
         try:
-            conn = sqlite3.connect(self.db_path)
-            cursor = conn.cursor()
-            
-            cursor.execute(
-                "SELECT account_id, username, email, nom, prenom FROM accounts WHERE account_id = ?",
-                (account_id,)
-            )
-            
-            user = cursor.fetchone()
-            conn.close()
-            
-            if user:
-                return {
-                    'id': user[0],
-                    'username': user[1],
-                    'email': user[2],
-                    'nom': user[3],
-                    'prenom': user[4]
-                }
-            
-            return None
+            with get_db_context(self.db_path) as (conn, cursor):
+                cursor.execute(
+                    "SELECT account_id, username, email, nom, prenom FROM accounts WHERE account_id = ?",
+                    (account_id,)
+                )
+                
+                user = cursor.fetchone()
+                
+                if user:
+                    return {
+                        'id': user[0],
+                        'username': user[1],
+                        'email': user[2],
+                        'nom': user[3],
+                        'prenom': user[4]
+                    }
+                
+                return None
             
         except Exception as e:
             print(f"✗ Erreur récupération utilisateur: {e}")
@@ -204,46 +185,41 @@ class AccountModel:
             dict: {'success': bool, 'error': str or None}
         """
         try:
-            conn = sqlite3.connect(self.db_path)
-            cursor = conn.cursor()
-            
-            # Construire la requête dynamiquement
-            updates = []
-            params = []
-            
-            if username is not None:
-                updates.append("username = ?")
-                params.append(username)
-            
-            if email is not None:
-                updates.append("email = ?")
-                params.append(email)
-            
-            if nom is not None:
-                updates.append("nom = ?")
-                params.append(nom)
-            
-            if prenom is not None:
-                updates.append("prenom = ?")
-                params.append(prenom)
-            
-            if not updates:
+            with get_db_context(self.db_path) as (conn, cursor):
+                # Construire la requête dynamiquement
+                updates = []
+                params = []
+                
+                if username is not None:
+                    updates.append("username = ?")
+                    params.append(username)
+                
+                if email is not None:
+                    updates.append("email = ?")
+                    params.append(email)
+                
+                if nom is not None:
+                    updates.append("nom = ?")
+                    params.append(nom)
+                
+                if prenom is not None:
+                    updates.append("prenom = ?")
+                    params.append(prenom)
+                
+                if not updates:
+                    return {'success': True, 'error': None}
+                
+                # Ajouter updated_at
+                updates.append("updated_at = CURRENT_TIMESTAMP")
+                
+                # Ajouter account_id
+                params.append(account_id)
+                
+                # Exécuter la requête
+                query = f"UPDATE accounts SET {', '.join(updates)} WHERE account_id = ?"
+                cursor.execute(query, params)
+                
                 return {'success': True, 'error': None}
-            
-            # Ajouter updated_at
-            updates.append("updated_at = CURRENT_TIMESTAMP")
-            
-            # Ajouter account_id
-            params.append(account_id)
-            
-            # Exécuter la requête
-            query = f"UPDATE accounts SET {', '.join(updates)} WHERE account_id = ?"
-            cursor.execute(query, params)
-            
-            conn.commit()
-            conn.close()
-            
-            return {'success': True, 'error': None}
             
         except Exception as e:
             print(f"✗ Erreur mise à jour profil: {e}")
@@ -262,41 +238,34 @@ class AccountModel:
             dict: {'success': bool, 'error': str or None}
         """
         try:
-            conn = sqlite3.connect(self.db_path)
-            cursor = conn.cursor()
-            
-            # Récupérer le hash actuel
-            cursor.execute(
-                "SELECT password_hash FROM accounts WHERE account_id = ?",
-                (account_id,)
-            )
-            
-            result = cursor.fetchone()
-            
-            if not result:
-                conn.close()
-                return {'success': False, 'error': 'user_not_found'}
-            
-            stored_hash = result[0]
-            
-            # Vérifier le mot de passe actuel
-            if not self._verify_password(current_password, stored_hash):
-                conn.close()
-                return {'success': False, 'error': 'invalid_current_password'}
-            
-            # Hasher le nouveau mot de passe
-            new_hash = self._hash_password(new_password)
-            
-            # Mettre à jour
-            cursor.execute(
-                "UPDATE accounts SET password_hash = ?, updated_at = CURRENT_TIMESTAMP WHERE account_id = ?",
-                (new_hash, account_id)
-            )
-            
-            conn.commit()
-            conn.close()
-            
-            return {'success': True, 'error': None}
+            with get_db_context(self.db_path) as (conn, cursor):
+                # Récupérer le hash actuel
+                cursor.execute(
+                    "SELECT password_hash FROM accounts WHERE account_id = ?",
+                    (account_id,)
+                )
+                
+                result = cursor.fetchone()
+                
+                if not result:
+                    return {'success': False, 'error': 'user_not_found'}
+                
+                stored_hash = result[0]
+                
+                # Vérifier le mot de passe actuel
+                if not self._verify_password(current_password, stored_hash):
+                    return {'success': False, 'error': 'invalid_current_password'}
+                
+                # Hasher le nouveau mot de passe
+                new_hash = self._hash_password(new_password)
+                
+                # Mettre à jour
+                cursor.execute(
+                    "UPDATE accounts SET password_hash = ?, updated_at = CURRENT_TIMESTAMP WHERE account_id = ?",
+                    (new_hash, account_id)
+                )
+                
+                return {'success': True, 'error': None}
             
         except Exception as e:
             print(f"✗ Erreur changement mot de passe: {e}")

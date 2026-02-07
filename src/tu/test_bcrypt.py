@@ -1,15 +1,15 @@
 import bcrypt
-import sqlite3
 from datetime import datetime
 import time
+from src.utils.db_connection import get_db_connection, DB_PATH
 
-def connect_with_retry(db_path, max_retries=3):
+def connect_with_retry(db_path=DB_PATH, max_retries=3):
     """Tente de se connecter à la BDD avec retry"""
     for attempt in range(max_retries):
         try:
-            conn = sqlite3.connect(db_path, timeout=10.0)
+            conn = get_db_connection(db_path)
             return conn
-        except sqlite3.OperationalError as e:
+        except Exception as e:
             if "locked" in str(e):
                 if attempt < max_retries - 1:
                     print(f"⏳ BDD verrouillée, nouvelle tentative dans 2s... ({attempt + 1}/{max_retries})")
@@ -28,7 +28,7 @@ def analyze_account():
     print("=== ANALYSE COMPTE COINTRADER ===\n")
     
     try:
-        conn = connect_with_retry('datas/cointrader.db')
+        conn = connect_with_retry()
         cursor = conn.cursor()
         
         # Récupérer tous les comptes
@@ -72,7 +72,7 @@ def fix_account_password():
     print("\n=== CORRECTION MOT DE PASSE ===\n")
     
     try:
-        conn = connect_with_retry('datas/cointrader.db')
+        conn = connect_with_retry()
         cursor = conn.cursor()
         
         # Lister les comptes
@@ -152,7 +152,7 @@ def create_test_account():
     print("\n=== CRÉATION COMPTE DE TEST ===\n")
     
     try:
-        conn = connect_with_retry('datas/cointrader.db')
+        conn = connect_with_retry()
         cursor = conn.cursor()
         
         # Vérifier si le compte test existe
