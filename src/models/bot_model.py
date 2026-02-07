@@ -43,14 +43,14 @@ class BotModel:
             # Générer automatiquement le product_id
             product_id = f"{crypto_source}-{crypto_target}"
             
-            # Insérer le bot
+            # Insérer le bot (créer désactivé par défaut)
             query = """
                 INSERT INTO bots (
                     account_id, exchange_id, crypto_source, crypto_target, 
                     product_id, prix_achat_cible, pourcentage_gain, 
                     montant_trade, type_ordre, is_active
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
             """
             
             self.db.cursor.execute(

@@ -153,6 +153,7 @@ class MainApplication:
         menu_items = [
             ("📊  Tableau de bord", self.show_dashboard),
             ("🤖  Mes bots", self.show_bots),
+            ("🏦  Plateformes", self.show_platforms),
             ("📜  Historique", self.show_history),
             ("👤  Mon profil", self.show_profile),
             ("⚙️  Paramètres", self.show_settings)
@@ -268,6 +269,18 @@ class MainApplication:
         
         from src.views.settings_view import SettingsView
         SettingsView(self.content_frame, self.theme)
+
+    def show_platforms(self):
+        """Affiche la gestion des plateformes/exchanges"""
+        self.current_page = 'platforms'
+        self.clear_content()
+
+        from src.views.platforms_view import PlatformsView
+        PlatformsView(
+            parent_frame=self.content_frame,
+            theme=self.theme,
+            user_data=self.user_data
+        )
     
     def update_user_header(self, user_data):
         """Met à jour le nom dans le header"""

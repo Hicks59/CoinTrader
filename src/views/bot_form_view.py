@@ -161,14 +161,23 @@ class BotFormView:
         label1 = Label.field_label(col1, "Exchange", self.theme, icon="🏦")
         label1.pack(fill='x', pady=(0, 8))
         
+        # Charger les exchanges dynamiquement
+        from src.controllers.exchange_controller import ExchangeController
+        exch_ctrl = ExchangeController()
+        exchanges = exch_ctrl.list_exchanges()
+        exchange_display = [(e.get('display_name') or e.get('name')) for e in exchanges]
+
         self.bot_entries['exchange'] = ttk.Combobox(
             col1,
-            values=["Coinbase"],
+            values=exchange_display or ["Coinbase"],
             state='readonly',
             font=(FONT_FAMILY, 11),
             height=12
         )
-        self.bot_entries['exchange'].set("Coinbase")
+        if exchange_display:
+            self.bot_entries['exchange'].set(exchange_display[0])
+        else:
+            self.bot_entries['exchange'].set("Coinbase")
         self.bot_entries['exchange'].pack(fill='x', ipady=10)
         
         # Colonne 2 - Crypto à acheter
@@ -433,7 +442,7 @@ class BotFormView:
             
             if result['success']:
                 # Afficher popup de confirmation d'activation
-                self._show_activation_popup()
+                self._show_activation_popup(result['bot_id'])
             else:
                 self.bot_status_label.config(text=f"✗ {result['message']}", fg='#F44336')
                 
@@ -441,7 +450,7 @@ class BotFormView:
             print(f"✗ Erreur création bot: {e}")
             self.bot_status_label.config(text=f"✗ Erreur: {str(e)}", fg='#F44336')
     
-    def _show_activation_popup(self):
+    def _show_activation_popup(self, bot_id):
         """Affiche une popup pour demander l'activation du bot"""
         # Créer une fenêtre popup
         popup = tk.Toplevel(self.parent_frame)
@@ -473,11 +482,18 @@ class BotFormView:
         
         def activate():
             popup.destroy()
-            self.bot_status_label.config(text="✓ Bot enregistré et activé", fg='#4CAF50')
+            # Activer le bot
+            bot_controller = BotController()
+            result = bot_controller.toggle_bot(bot_id, True)
+            if result['success']:
+                self.bot_status_label.config(text="✓ Bot enregistré et activé", fg='#4CAF50')
+            else:
+                self.bot_status_label.config(text=f"✗ {result['message']}", fg='#F44336')
             self.parent_frame.after(1500, self.on_success_callback)
         
         def deactivate():
             popup.destroy()
+            # Bot reste désactivé (déjà l'état par défaut)
             self.bot_status_label.config(text="✓ Bot enregistré (désactivé)", fg='#4CAF50')
             self.parent_frame.after(1500, self.on_success_callback)
         
