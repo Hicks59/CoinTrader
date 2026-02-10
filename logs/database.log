@@ -442,3 +442,22 @@
 [2026-02-03 19:09:50] [QUERY] Login réussi: Hicks
 [2026-02-03 19:38:09] [INFO] Connexion établie à datas/kipacoin.db
 [2026-02-03 19:38:10] [QUERY] Login réussi: Hicks
+[2026-02-09 16:00:02] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:00:10] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:00:10] [ERROR] Erreur récupération api keys: no such column: ak.account_id
+[2026-02-09 16:00:11] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:00:11] [ERROR] Erreur récupération api keys: no such column: ak.account_id
+[2026-02-09 16:12:45] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:12:45] [ERROR] Erreur récupération api keys: no such column: ak.account_id
+[2026-02-09 16:12:59] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:14:41] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:14:44] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:31:56] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:31:58] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:32:01] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:32:04] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:38:16] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 16:39:34] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 21:34:34] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 21:34:42] [INFO] Connexion établie à datas/cointrader.db
+[2026-02-09 21:34:49] [INFO] Connexion établie à datas/cointrader.db

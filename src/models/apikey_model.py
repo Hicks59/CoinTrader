@@ -45,10 +45,10 @@ class ApiKeyModel:
     def get_api_keys_for_user(self, user_id):
         try:
             query = """
-                SELECT ak.api_key_id, ak.account_id, ak.fk_exchange_id, ak.api_key, ak.api_secret, e.display_name
+                SELECT ak.api_key_id, ak.fk_account_id, ak.fk_exchange_id, ak.api_key, ak.api_secret, e.display_name
                 FROM api_keys ak
                 JOIN exchanges e ON ak.fk_exchange_id = e.exchange_id
-                WHERE ak.account_id = ?
+                WHERE ak.fk_account_id = ?
                 ORDER BY e.display_name
             """
             self.db.cursor.execute(query, (user_id,))

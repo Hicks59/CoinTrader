@@ -1,3 +1,9 @@
+import sys
+from pathlib import Path
+
+# Ajouter le répertoire racine du projet au path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
 import bcrypt
 from datetime import datetime
 import time
@@ -32,7 +38,7 @@ def analyze_account():
         cursor = conn.cursor()
         
         # Récupérer tous les comptes
-        cursor.execute("SELECT id, username, password_hash, email FROM accounts")
+        cursor.execute("SELECT account_id, username, password_hash, email FROM accounts")
         accounts = cursor.fetchall()
         
         if not accounts:
@@ -44,6 +50,7 @@ def analyze_account():
         
         for account_id, username, password_hash, email in accounts:
             print(f"--- Compte: {username} (ID: {account_id}) ---")
+            print(f"Username: {username}")
             print(f"Email: {email}")
             print(f"Type hash: {type(password_hash)}")
             print(f"Longueur hash: {len(password_hash)} caractères")
@@ -76,7 +83,7 @@ def fix_account_password():
         cursor = conn.cursor()
         
         # Lister les comptes
-        cursor.execute("SELECT id, username, email FROM accounts")
+        cursor.execute("SELECT account_id, username, email FROM accounts")
         accounts = cursor.fetchall()
         
         if not accounts:
@@ -89,9 +96,14 @@ def fix_account_password():
             print(f"  {account_id}. {username} ({email})")
         
         # Choisir le compte
-        account_id = input("\nID du compte à corriger: ")
+        try:
+            account_id = input("\nID du compte à corriger: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\n❌ Opération annulée")
+            conn.close()
+            return
         
-        cursor.execute("SELECT username FROM accounts WHERE id = ?", (account_id,))
+        cursor.execute("SELECT username FROM accounts WHERE account_id = ?", (account_id,))
         result = cursor.fetchone()
         
         if not result:
@@ -103,8 +115,13 @@ def fix_account_password():
         
         # Demander le nouveau mot de passe
         print(f"\n👤 Compte: {username}")
-        new_password = input("Nouveau mot de passe: ")
-        confirm_password = input("Confirmer le mot de passe: ")
+        try:
+            new_password = input("Nouveau mot de passe: ").strip()
+            confirm_password = input("Confirmer le mot de passe: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\n❌ Opération annulée")
+            conn.close()
+            return
         
         if new_password != confirm_password:
             print("❌ Les mots de passe ne correspondent pas")
@@ -122,7 +139,7 @@ def fix_account_password():
         # Mettre à jour la base
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         cursor.execute(
-            "UPDATE accounts SET password_hash = ?, updated_at = ? WHERE id = ?",
+            "UPDATE accounts SET password_hash = ?, updated_at = ? WHERE account_id = ?",
             (password_hash_str, current_time, account_id)
         )
         conn.commit()
@@ -131,7 +148,7 @@ def fix_account_password():
         
         # Tester immédiatement
         print("\n--- TEST DE VÉRIFICATION ---")
-        cursor.execute("SELECT password_hash FROM accounts WHERE id = ?", (account_id,))
+        cursor.execute("SELECT password_hash FROM accounts WHERE account_id = ?", (account_id,))
         stored_hash = cursor.fetchone()[0]
         
         is_match = bcrypt.checkpw(new_password.encode('utf-8'), stored_hash.encode('utf-8'))
@@ -156,11 +173,16 @@ def create_test_account():
         cursor = conn.cursor()
         
         # Vérifier si le compte test existe
-        cursor.execute("SELECT id FROM accounts WHERE username = 'test'")
+        cursor.execute("SELECT account_id FROM accounts WHERE username = 'test'")
         if cursor.fetchone():
             print("⚠️ Le compte 'test' existe déjà")
-            delete = input("Voulez-vous le supprimer et le recréer? (o/n): ")
-            if delete.lower() == 'o':
+            try:
+                delete = input("Voulez-vous le supprimer et le recréer? (o/n): ").strip().lower()
+            except (EOFError, KeyboardInterrupt):
+                print("\n❌ Opération annulée")
+                conn.close()
+                return
+            if delete == 'o':
                 cursor.execute("DELETE FROM accounts WHERE username = 'test'")
                 conn.commit()
                 print("✅ Compte 'test' supprimé")
@@ -199,7 +221,7 @@ def create_test_account():
         
         # Tester immédiatement
         print("\n--- TEST DE VÉRIFICATION ---")
-        cursor.execute("SELECT password_hash FROM accounts WHERE id = ?", (account_id,))
+        cursor.execute("SELECT password_hash FROM accounts WHERE account_id = ?", (account_id,))
         stored_hash = cursor.fetchone()[0]
         
         is_match = bcrypt.checkpw(password.encode('utf-8'), stored_hash.encode('utf-8'))
@@ -220,28 +242,35 @@ def create_test_account():
 
 def main_menu():
     """Menu principal"""
-    while True:
-        print("\n" + "="*50)
-        print("CoinTrader - DIAGNOSTIC & CORRECTION BCRYPT")
-        print("="*50)
-        print("\n1. Analyser les comptes existants")
-        print("2. Corriger le mot de passe d'un compte")
-        print("3. Créer un compte de test")
-        print("4. Quitter")
-        
-        choice = input("\nVotre choix: ")
-        
-        if choice == "1":
-            analyze_account()
-        elif choice == "2":
-            fix_account_password()
-        elif choice == "3":
-            create_test_account()
-        elif choice == "4":
-            print("\n👋 Au revoir!")
-            break
-        else:
-            print("❌ Choix invalide")
+    try:
+        while True:
+            print("\n" + "="*50)
+            print("CoinTrader - DIAGNOSTIC & CORRECTION BCRYPT")
+            print("="*50)
+            print("\n1. Analyser les comptes existants")
+            print("2. Corriger le mot de passe d'un compte")
+            print("3. Créer un compte de test")
+            print("4. Quitter")
+            
+            try:
+                choice = input("\nVotre choix: ").strip()
+            except (EOFError, KeyboardInterrupt):
+                print("\n\n👋 Au revoir!")
+                break
+            
+            if choice == "1":
+                analyze_account()
+            elif choice == "2":
+                fix_account_password()
+            elif choice == "3":
+                create_test_account()
+            elif choice == "4":
+                print("\n👋 Au revoir!")
+                break
+            else:
+                print("❌ Choix invalide")
+    except KeyboardInterrupt:
+        print("\n\n👋 Au revoir!")
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ class InitController:
     
     def __init__(self):
         self.db_path = 'datas/cointrader.db'
-        self.sql_init_file = 'database/init_database.sql'
+        self.sql_init_file = 'init_project/init_database.sql'
         self.log_dir = 'logs'
         self.data_dir = 'datas'
         self.max_init_attempts = 3
