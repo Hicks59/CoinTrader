@@ -45,7 +45,7 @@ class ApiKeyModel:
     def get_api_keys_for_user(self, user_id):
         try:
             query = """
-                SELECT ak.api_key_id, ak.fk_account_id, ak.fk_exchange_id, ak.api_key, ak.api_secret, e.display_name
+                SELECT ak.api_key_id, ak.fk_account_id, ak.fk_exchange_id, ak.api_key, ak.api_secret, e.display_name, ak.label
                 FROM api_keys ak
                 JOIN exchanges e ON ak.fk_exchange_id = e.exchange_id
                 WHERE ak.fk_account_id = ?
@@ -65,24 +65,29 @@ class ApiKeyModel:
                     "exchange_id": row[2],
                     "api_key": row[3],
                     "api_secret": secret_decrypted,
-                    "exchange_display": row[5]
+                    "exchange_display": row[5],
+                    "label": row[6]
                 })
             return result
         except Exception as e:
             self.db.logger.log_error(f"Erreur récupération api keys: {e}")
             return []
 
-    def add_api_key(self, account_id, exchange_id, api_key, api_secret):
+    def add_api_key(self, account_id, exchange_id, api_key, api_secret, label=None):
         try:
             # Chiffrer le secret avant stockage
             secret_encrypted = encrypt_secret(api_secret) if api_secret else ''
+            print(f"[DEBUG ADD_API_KEY] account_id={account_id}, exchange_id={exchange_id}, label={label}")
             self.db.cursor.execute(
-                "INSERT INTO api_keys (account_id, fk_exchange_id, api_key, api_secret, created_at) VALUES (?, ?, ?, ?, ?)",
-                (account_id, exchange_id, api_key, secret_encrypted, datetime.now())
+                "INSERT INTO api_keys (fk_account_id, fk_exchange_id, api_key, api_secret, label, created_at) VALUES (?, ?, ?, ?, ?, ?)",
+                (account_id, exchange_id, api_key, secret_encrypted, label, datetime.now())
             )
+            print(f"[DEBUG ADD_API_KEY] INSERT exécuté, rowcount={self.db.cursor.rowcount}")
             self.db.connection.commit()
+            print(f"[DEBUG ADD_API_KEY] COMMIT réussi")
             return True, "Clé API ajoutée"
         except Exception as e:
+            print(f"[DEBUG ADD_API_KEY] ERREUR: {e}")
             self.db.logger.log_error(f"Erreur ajout api key: {e}")
             return False, str(e)
 
@@ -93,4 +98,22 @@ class ApiKeyModel:
             return True, "Clé API supprimée"
         except Exception as e:
             self.db.logger.log_error(f"Erreur suppression api key: {e}")
+            return False, str(e)
+
+    def update_api_key(self, api_key_id, api_key, api_secret, label=None):
+        try:
+            # Chiffrer le secret avant stockage
+            secret_encrypted = encrypt_secret(api_secret) if api_secret else ''
+            print(f"[DEBUG UPDATE_API_KEY] api_key_id={api_key_id}, label={label}")
+            self.db.cursor.execute(
+                "UPDATE api_keys SET api_key = ?, api_secret = ?, label = ? WHERE api_key_id = ?",
+                (api_key, secret_encrypted, label, api_key_id)
+            )
+            print(f"[DEBUG UPDATE_API_KEY] UPDATE exécuté, rowcount={self.db.cursor.rowcount}")
+            self.db.connection.commit()
+            print(f"[DEBUG UPDATE_API_KEY] COMMIT réussi")
+            return True, "Clé API modifiée"
+        except Exception as e:
+            print(f"[DEBUG UPDATE_API_KEY] ERREUR: {e}")
+            self.db.logger.log_error(f"Erreur modification api key: {e}")
             return False, str(e)

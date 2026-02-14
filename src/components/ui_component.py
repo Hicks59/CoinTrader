@@ -7,6 +7,36 @@ from tkinter import ttk
 FONT_FAMILY = "Segoe UI"
 
 
+def center_window(root, width=None, height=None):
+    """
+    Centre la fenêtre sur l'écran
+    
+    Args:
+        root: Fenêtre Tkinter à centrer
+        width (int, optional): Largeur de la fenêtre
+        height (int, optional): Hauteur de la fenêtre
+    """
+    root.update_idletasks()
+    
+    # Obtenir les dimensions
+    if width and height:
+        root.geometry(f"{width}x{height}")
+        root.update_idletasks()
+    
+    # Obtenir les dimensions de la fenêtre et de l'écran
+    window_width = root.winfo_width()
+    window_height = root.winfo_height()
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    
+    # Calculer la position pour centrer
+    x = (screen_width - window_width) // 2
+    y = (screen_height - window_height) // 2
+    
+    # Appliquer la géométrie avec la position centrée
+    root.geometry(f"+{x}+{y}")
+
+
 class Button:
     """Composant Button avec styles prédéfinis"""
     
@@ -462,3 +492,68 @@ class FormField:
     def clear(self):
         """Vide l'input"""
         self.input.delete(0, tk.END)
+
+
+class Toast:
+    """Composant Toast pour afficher des notifications temporaires"""
+    
+    @staticmethod
+    def show(parent, message, message_type='info', duration=3000):
+        """
+        Affiche une notification toast
+        
+        Args:
+            parent: Widget parent
+            message (str): Message à afficher
+            message_type (str): Type de message ('success', 'error', 'warning', 'info')
+            duration (int): Durée d'affichage en millisecondes
+        """
+        # Déterminer les couleurs
+        colors = {
+            'success': {'bg': '#4CAF50', 'fg': '#FFFFFF'},
+            'error': {'bg': '#F44336', 'fg': '#FFFFFF'},
+            'warning': {'bg': '#FF9800', 'fg': '#FFFFFF'},
+            'info': {'bg': '#2196F3', 'fg': '#FFFFFF'}
+        }
+        
+        color = colors.get(message_type, colors['info'])
+        
+        # Créer la fenêtre toast
+        toast = tk.Toplevel(parent)
+        toast.wm_overrideredirect(True)
+        
+        # Créer le frame
+        frame = tk.Frame(toast, bg=color['bg'])
+        frame.pack(fill='both', expand=True, padx=1, pady=1)
+        
+        # Ajouter le texte
+        label = tk.Label(
+            frame,
+            text=message,
+            font=(FONT_FAMILY, 10),
+            bg=color['bg'],
+            fg=color['fg'],
+            padx=20,
+            pady=12
+        )
+        label.pack()
+        
+        # Positionner le toast en bas à droite du parent
+        toast.update_idletasks()
+        toast_width = toast.winfo_width()
+        toast_height = toast.winfo_height()
+        
+        # Obtenir la position et taille du parent
+        parent_x = parent.winfo_rootx()
+        parent_y = parent.winfo_rooty()
+        parent_width = parent.winfo_width()
+        parent_height = parent.winfo_height()
+        
+        # Positionner le toast en bas à droite du parent
+        x = parent_x + parent_width - toast_width - 20
+        y = parent_y + parent_height - toast_height - 20
+        
+        toast.geometry(f"+{x}+{y}")
+        
+        # Détruire le toast après la durée spécifiée
+        toast.after(duration, toast.destroy)

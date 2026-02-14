@@ -18,11 +18,12 @@ class SignupView:
     
     def render(self):
         """Affiche l'écran d'inscription"""
+        from src.components.ui_component import center_window
+        
         self.root.title(f"{self.APP_NAME} - Inscription")
-        self.root.geometry("450x700")
         self.root.resizable(False, False)
         self.root.configure(bg=self.theme['bg_primary'])
-        self.root.eval("tk::PlaceWindow . center")
+        center_window(self.root, 450, 700)
         
         main_frame = tk.Frame(self.root, bg=self.theme['bg_primary'])
         main_frame.pack(expand=True, fill='both', padx=40, pady=30)

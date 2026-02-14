@@ -28,12 +28,14 @@ class LoaderScreen:
         
         # Configuration de la fenêtre
         self.root.title(APP_NAME)
-        self.root.geometry("400x300")
         self.root.resizable(False, False)
         self.root.configure(bg=WINDOW_BG)
         
+        # Importer et utiliser la fonction de centrage
+        from src.components.ui_component import center_window
+        
         # Centrer la fenêtre
-        self.root.eval("tk::PlaceWindow . center")
+        center_window(self.root, 400, 300)
         
         # Retirer la bordure de la fenêtre
         self.root.overrideredirect(True)

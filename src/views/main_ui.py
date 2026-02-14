@@ -57,13 +57,14 @@ class MainApplication:
     
     def setup_ui(self):
         """Configure l'interface principale"""
+        from src.components.ui_component import center_window
+        
         self.root.title(f"{APP_NAME} - Tableau de bord")
         
         if self.window_geometry:
             self.root.geometry(self.window_geometry)
         else:
-            self.root.geometry("1200x700")
-            self.root.eval(TK_CENTER_WINDOW)
+            center_window(self.root, 1200, 700)
         
         self.root.resizable(True, True)
         self.root.configure(bg=self.theme['bg_primary'])
@@ -152,8 +153,8 @@ class MainApplication:
         # Items du menu
         menu_items = [
             ("📊  Tableau de bord", self.show_dashboard),
-            ("🤖  Mes bots", self.show_bots),
             ("🏦  Plateformes", self.show_platforms),
+            ("🤖  Mes bots", self.show_bots),
             ("📜  Historique", self.show_history),
             ("👤  Mon profil", self.show_profile),
             ("⚙️  Paramètres", self.show_settings)

@@ -19,11 +19,12 @@ class LoginView:
     
     def render(self):
         """Affiche l'écran de connexion"""
+        from src.components.ui_component import center_window
+        
         self.root.title(f"{self.APP_NAME} - Connexion")
-        self.root.geometry("400x550")
         self.root.resizable(False, False)
         self.root.configure(bg=self.theme['bg_primary'])
-        self.root.eval("tk::PlaceWindow . center")
+        center_window(self.root, 400, 550)
         
         main_frame = tk.Frame(self.root, bg=self.theme['bg_primary'])
         main_frame.pack(expand=True, fill='both', padx=40, pady=40)
