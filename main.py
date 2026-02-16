@@ -203,7 +203,7 @@ def launch_login():
     root = tk.Tk()
     
     # Importer les classes nécessaires
-    from src.views.main_ui import MainApplication, Theme
+    from src.views.main_view import MainApplication, Theme
     from src.views.login_view import LoginView
     from src.views.signup_view import SignupView
     

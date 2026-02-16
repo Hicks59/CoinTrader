@@ -271,13 +271,15 @@ class MainApplication:
         from src.views.settings_view import SettingsView
         SettingsView(self.content_frame, self.theme)
 
+    # Dans la classe MainApplication, remplacer la méthode show_platforms():
+    
     def show_platforms(self):
         """Affiche la gestion des plateformes/exchanges"""
         self.current_page = 'platforms'
         self.clear_content()
 
-        from src.views.platforms_view import PlatformsView
-        PlatformsView(
+        from src.views.exchange_view import ExchangeView
+        ExchangeView(
             parent_frame=self.content_frame,
             theme=self.theme,
             user_data=self.user_data

@@ -15,10 +15,16 @@ CREATE TABLE IF NOT EXISTS accounts (
 
 CREATE TABLE IF NOT EXISTS exchanges (
     exchange_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT UNIQUE NOT NULL,
+    fk_account_id INTEGER NOT NULL,
+    name TEXT NOT NULL,
     display_name TEXT NOT NULL,
+    logo TEXT DEFAULT '💱',
+    endpoint_url TEXT,
     is_active BOOLEAN DEFAULT 1,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (fk_account_id) REFERENCES accounts(account_id) ON DELETE CASCADE,
+    UNIQUE(fk_account_id, name)
 );
 
 CREATE TABLE IF NOT EXISTS api_keys (
@@ -73,4 +79,11 @@ CREATE TABLE IF NOT EXISTS orders (
     FOREIGN KEY (fk_exchange_id) REFERENCES exchanges(exchange_id) ON DELETE CASCADE
 );
 
-INSERT OR IGNORE INTO exchanges (name, display_name) VALUES ('coinbase', 'Coinbase');
+INSERT OR IGNORE INTO exchanges (name, display_name, logo, endpoint_url) 
+VALUES ('coinbase', 'Coinbase', '🟦', 'https://api.exchange.coinbase.com');
+
+INSERT OR IGNORE INTO exchanges (name, display_name, logo, endpoint_url) 
+VALUES ('binance', 'Binance', '🟨', 'https://api.binance.com');
+
+INSERT OR IGNORE INTO exchanges (name, display_name, logo, endpoint_url) 
+VALUES ('kraken', 'Kraken', '🟪', 'https://api.kraken.com');
