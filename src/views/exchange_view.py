@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from src.controllers.exchange_controller import ExchangeController
-from src.components.ui_component import Label, FormField, Button, Toast
+from src.components.ui_component import Label, FormField, Button, Card, Toast
 
 FONT_FAMILY = "Segoe UI"
 
@@ -12,7 +12,7 @@ class ExchangeView:
         self.parent_frame = parent_frame
         self.theme = theme
         self.user_data = user_data
-        self.controller = ExchangeController()
+        self.controller = ExchangeController(account_id=user_data['id'])
         self.current_view = 'list'  # 'list' ou 'form'
         self.editing_exchange = None
         
@@ -37,89 +37,86 @@ class ExchangeView:
         # Titre
         tk.Label(
             header_frame,
-            text="Plateformes d'échange",
+            text="Mes plateformes",
             font=(FONT_FAMILY, 20, 'bold'),
             bg=self.theme['bg_primary'],
             fg=self.theme['text_primary']
         ).pack(side='left')
-        
-        # Bouton ajouter (aligné à droite comme pour les bots)
-        add_btn = Button.primary(
+
+        # Bouton ajouter (style identique aux bots)
+        tk.Button(
             header_frame,
-            "➕ Ajouter plateforme",
-            self.show_add_form,
-            self.theme,
-            font=(FONT_FAMILY, 10, 'bold')
-        )
-        add_btn.pack(side='right', ipadx=20, ipady=10)
+            text="➕ Ajouter une plateforme",
+            font=(FONT_FAMILY, 10, 'bold'),
+            bg=self.theme['accent'],
+            fg=self.theme['button_text'],
+            activebackground=self.theme['accent'],
+            relief='flat',
+            cursor='hand2',
+            command=self.show_add_form
+        ).pack(side='right', ipadx=20, ipady=10)
         
         # Liste des exchanges
         self._display_exchanges_list()
     
     def _display_exchanges_list(self):
         """Affiche la liste des exchanges sous forme de cartes"""
-        # Container scrollable
         list_container = tk.Frame(self.container, bg=self.theme['bg_primary'])
         list_container.pack(fill='both', expand=True)
-        
-        # Canvas avec scrollbar
-        canvas = tk.Canvas(list_container, bg=self.theme['bg_primary'], highlightthickness=0)
-        scrollbar = tk.Scrollbar(list_container, orient='vertical', command=canvas.yview)
-        scrollable_frame = tk.Frame(canvas, bg=self.theme['bg_primary'])
-        
-        scrollable_frame.bind(
-            '<Configure>',
-            lambda e: canvas.configure(scrollregion=canvas.bbox('all'))
-        )
-        
-        canvas.create_window((0, 0), window=scrollable_frame, anchor='nw')
-        canvas.configure(yscrollcommand=scrollbar.set)
-        
-        # Récupérer les exchanges
+
         exchanges = self.controller.list_exchanges()
-        
+
         if not exchanges:
-            # Message si aucun exchange
-            empty_label = tk.Label(
-                scrollable_frame,
-                text="Aucune plateforme configurée.\nCliquez sur 'Ajouter plateforme' pour commencer.",
+            tk.Label(
+                list_container,
+                text="Aucune plateforme configurée.\nCliquez sur 'Ajouter une plateforme' pour commencer.",
                 font=(FONT_FAMILY, 11),
                 bg=self.theme['bg_primary'],
                 fg=self.theme['text_secondary'],
                 justify='center'
-            )
-            empty_label.pack(pady=50)
-        else:
-            # Afficher les exchanges en grille (3 colonnes)
-            for idx, exchange in enumerate(exchanges):
-                row = idx // 3
-                col = idx % 3
-                
-                card = self._create_exchange_card(scrollable_frame, exchange)
-                card.grid(row=row, column=col, padx=10, pady=10, sticky='nsew')
-            
-            # Configurer les colonnes
-            for i in range(3):
-                scrollable_frame.grid_columnconfigure(i, weight=1)
-        
+            ).pack(expand=True)
+            return
+
+        # Canvas avec scrollbar conditionnelle
+        canvas = tk.Canvas(list_container, bg=self.theme['bg_primary'], highlightthickness=0)
+        scrollbar = tk.Scrollbar(list_container, orient='vertical', command=canvas.yview)
+        scrollable_frame = tk.Frame(canvas, bg=self.theme['bg_primary'])
+        win_id = canvas.create_window((0, 0), window=scrollable_frame, anchor='nw')
+
+        def _on_frame_configure(_e):
+            canvas.configure(scrollregion=canvas.bbox('all'))
+            w = canvas.winfo_width()
+            if w > 1:
+                canvas.itemconfigure(win_id, width=w)
+
+        def _on_yscroll(first, last):
+            if float(first) <= 0.0 and float(last) >= 1.0:
+                scrollbar.pack_forget()
+            else:
+                scrollbar.pack(side='right', fill='y', before=canvas)
+            scrollbar.set(first, last)
+
+        scrollable_frame.bind('<Configure>', _on_frame_configure)
+        canvas.configure(yscrollcommand=_on_yscroll)
+
+        for idx, exchange in enumerate(exchanges):
+            row = idx // 3
+            col = idx % 3
+            card = self._create_exchange_card(scrollable_frame, exchange)
+            card.grid(row=row, column=col, padx=10, pady=10, sticky='nsew')
+
+        for i in range(3):
+            scrollable_frame.grid_columnconfigure(i, weight=1)
+
         canvas.pack(side='left', fill='both', expand=True)
-        scrollbar.pack(side='right', fill='y')
-        
-        # Bind mousewheel
         canvas.bind('<MouseWheel>', lambda e: canvas.yview_scroll(int(-1 * (e.delta / 120)), 'units'))
     
     def _create_exchange_card(self, parent, exchange):
         """Crée une carte pour un exchange (affichage simple)"""
-        card = tk.Frame(
-            parent,
-            bg=self.theme['bg_secondary'],
-            relief='flat',
-            highlightthickness=1,
-            highlightbackground=self.theme['border']
-        )
-        
+        card = Card(parent, self.theme)
+
         # Padding interne
-        inner_frame = tk.Frame(card, bg=self.theme['bg_secondary'])
+        inner_frame = tk.Frame(card.frame, bg=self.theme['bg_secondary'])
         inner_frame.pack(fill='both', expand=True, padx=25, pady=25)
         
         # Logo centré
@@ -291,10 +288,10 @@ class ExchangeView:
         # Logo (emoji ou URL)
         field_logo = FormField(
             form_container,
-            "Logo *",
+            "Logo",
             self.theme,
             icon="🎨",
-            help_text="Emoji ou URL de l'image (ex: 🟦, https://...)"
+            help_text="Emoji ou URL de l'image (ex: 🟦, https://...) — optionnel"
         )
         field_logo.pack(fill='x', pady=(0, 20))
         self.form_fields['logo'] = field_logo
@@ -351,8 +348,12 @@ class ExchangeView:
         logo = self.form_fields['logo'].get().strip()
         endpoint_url = self.form_fields['endpoint_url'].get().strip()
         
+        # Logo par défaut si vide
+        if not logo:
+            logo = '💱'
+
         # Validation
-        if not display_name or not logo or not endpoint_url:
+        if not display_name or not endpoint_url:
             self.form_status_label.config(
                 text="✗ Veuillez remplir tous les champs obligatoires",
                 fg='#F44336'

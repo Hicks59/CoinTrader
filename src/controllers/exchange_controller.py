@@ -4,9 +4,10 @@ from src.models.apikey_model import ApiKeyModel
 class ExchangeController:
     """Contrôleur pour gérer les exchanges (plateformes) et les API keys"""
     
-    def __init__(self):
+    def __init__(self, account_id=None):
         self.exchange_model = ExchangeModel()
         self.apikey_model = ApiKeyModel()
+        self.account_id = account_id
     
     # ============================================
     # GESTION DES EXCHANGES (PLATEFORMES)
@@ -19,8 +20,8 @@ class ExchangeController:
         Returns:
             list: Liste des exchanges
         """
-        return self.exchange_model.get_all_exchanges()
-    
+        return self.exchange_model.get_all_exchanges(self.account_id)
+
     def get_exchange(self, exchange_id):
         """
         Récupère une plateforme par son ID
@@ -31,79 +32,79 @@ class ExchangeController:
         Returns:
             dict or None: Informations de l'exchange
         """
-        return self.exchange_model.get_exchange_by_id(exchange_id)
-    
+        return self.exchange_model.get_exchange_by_id(exchange_id, self.account_id)
+
     def get_exchange_by_name(self, name):
         """
         Récupère une plateforme par son nom
-        
+
         Args:
             name (str): Nom de l'exchange
-            
+
         Returns:
             dict or None: Informations de l'exchange
         """
-        return self.exchange_model.get_exchange_by_name(name)
-    
+        return self.exchange_model.get_exchange_by_name(name, self.account_id)
+
     def add_exchange(self, name, display_name, logo='💱', endpoint_url=None):
         """
         Ajoute une nouvelle plateforme
-        
+
         Args:
             name (str): Nom technique (identifiant)
             display_name (str): Nom affiché
             logo (str): Logo (emoji ou URL)
             endpoint_url (str): URL de l'API
-            
+
         Returns:
             tuple: (success: bool, message: str)
         """
-        success, message, exchange_id = self.exchange_model.create_exchange(
-            name, display_name, logo, endpoint_url
+        success, message, _ = self.exchange_model.create_exchange(
+            self.account_id, name, display_name, logo, endpoint_url
         )
         return success, message
-    
+
     def update_exchange(self, exchange_id, display_name=None, logo=None, endpoint_url=None):
         """
         Met à jour une plateforme
-        
+
         Args:
             exchange_id (int): ID de l'exchange
             display_name (str): Nouveau nom affiché
             logo (str): Nouveau logo
             endpoint_url (str): Nouvelle URL
-            
+
         Returns:
             tuple: (success: bool, message: str)
         """
         return self.exchange_model.update_exchange(
-            exchange_id, display_name, logo, endpoint_url
+            exchange_id, self.account_id, display_name, logo, endpoint_url
         )
-    
+
     def delete_exchange(self, exchange_id):
         """
         Supprime une plateforme
-        
+
         Args:
             exchange_id (int): ID de l'exchange
-            
+
         Returns:
             tuple: (success: bool, message: str)
         """
-        return self.exchange_model.delete_exchange(exchange_id)
-    
+        return self.exchange_model.delete_exchange(exchange_id, self.account_id)
+
     def toggle_exchange(self, exchange_id, is_active):
         """
         Active/désactive une plateforme
-        
+
         Args:
             exchange_id (int): ID de l'exchange
             is_active (bool): Nouveau statut
-            
+
         Returns:
             tuple: (success: bool, message: str)
         """
-        return self.exchange_model.toggle_exchange_status(exchange_id, is_active)
+        return self.exchange_model.toggle_exchange_status(exchange_id, self.account_id, is_active)
     
     # ============================================
     # GESTION DES API KEYS

@@ -1,5 +1,6 @@
 import bcrypt
 from src.utils.db_connection import get_db_context, DB_PATH
+from src.models.database_model import DatabaseModel
 
 class AccountModel:
     """Modèle pour gérer les comptes utilisateurs en base de données"""
@@ -264,9 +265,10 @@ class AccountModel:
                     "UPDATE accounts SET password_hash = ?, updated_at = CURRENT_TIMESTAMP WHERE account_id = ?",
                     (new_hash, account_id)
                 )
-                
-                return {'success': True, 'error': None}
-            
+
+            DatabaseModel().log_activity(account_id, 'SECURITY_UPDATE', "Changement de mot de passe")
+            return {'success': True, 'error': None}
+
         except Exception as e:
             print(f"✗ Erreur changement mot de passe: {e}")
             return {'success': False, 'error': str(e)}

@@ -79,7 +79,16 @@ CREATE TABLE IF NOT EXISTS orders (
     FOREIGN KEY (fk_exchange_id) REFERENCES exchanges(exchange_id) ON DELETE CASCADE
 );
 
-INSERT OR IGNORE INTO exchanges (name, display_name, logo, endpoint_url) 
+CREATE TABLE IF NOT EXISTS activity_logs (
+    log_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fk_account_id INTEGER NOT NULL,
+    action_type TEXT NOT NULL,
+    description TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (fk_account_id) REFERENCES accounts(account_id) ON DELETE CASCADE
+);
+
+INSERT OR IGNORE INTO exchanges (name, display_name, logo, endpoint_url)
 VALUES ('coinbase', 'Coinbase', '🟦', 'https://api.exchange.coinbase.com');
 
 INSERT OR IGNORE INTO exchanges (name, display_name, logo, endpoint_url) 

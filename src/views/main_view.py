@@ -248,7 +248,7 @@ class MainApplication:
         self.clear_content()
         
         from src.views.history_view import HistoryView
-        HistoryView(self.content_frame, self.theme)
+        HistoryView(self.content_frame, self.theme, self.user_data)
     
     def show_profile(self):
         """Affiche le profil utilisateur"""

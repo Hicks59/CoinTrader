@@ -64,7 +64,8 @@ class BotModel:
             bot_id = self.db.cursor.lastrowid
             
             self.db.logger.log_query(f"Bot créé: {product_id} (ID: {bot_id})")
-            
+            self.db.log_activity(account_id, 'BOT_ADDED', f"Bot ajouté : {product_id}")
+
             return True, "Bot créé avec succès", bot_id
             
         except sqlite3.Error as e:

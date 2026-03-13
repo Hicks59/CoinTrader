@@ -77,17 +77,14 @@ class ApiKeyModel:
         try:
             # Chiffrer le secret avant stockage
             secret_encrypted = encrypt_secret(api_secret) if api_secret else ''
-            print(f"[DEBUG ADD_API_KEY] account_id={account_id}, exchange_id={exchange_id}, label={label}")
             self.db.cursor.execute(
                 "INSERT INTO api_keys (fk_account_id, fk_exchange_id, api_key, api_secret, label, created_at) VALUES (?, ?, ?, ?, ?, ?)",
                 (account_id, exchange_id, api_key, secret_encrypted, label, datetime.now())
             )
-            print(f"[DEBUG ADD_API_KEY] INSERT exécuté, rowcount={self.db.cursor.rowcount}")
             self.db.connection.commit()
-            print(f"[DEBUG ADD_API_KEY] COMMIT réussi")
+            self.db.logger.log_query(f"Clé API ajoutée: account={account_id}, exchange={exchange_id}, label={label}")
             return True, "Clé API ajoutée"
         except Exception as e:
-            print(f"[DEBUG ADD_API_KEY] ERREUR: {e}")
             self.db.logger.log_error(f"Erreur ajout api key: {e}")
             return False, str(e)
 
@@ -104,16 +101,13 @@ class ApiKeyModel:
         try:
             # Chiffrer le secret avant stockage
             secret_encrypted = encrypt_secret(api_secret) if api_secret else ''
-            print(f"[DEBUG UPDATE_API_KEY] api_key_id={api_key_id}, label={label}")
             self.db.cursor.execute(
                 "UPDATE api_keys SET api_key = ?, api_secret = ?, label = ? WHERE api_key_id = ?",
                 (api_key, secret_encrypted, label, api_key_id)
             )
-            print(f"[DEBUG UPDATE_API_KEY] UPDATE exécuté, rowcount={self.db.cursor.rowcount}")
             self.db.connection.commit()
-            print(f"[DEBUG UPDATE_API_KEY] COMMIT réussi")
+            self.db.logger.log_query(f"Clé API modifiée: api_key_id={api_key_id}, label={label}")
             return True, "Clé API modifiée"
         except Exception as e:
-            print(f"[DEBUG UPDATE_API_KEY] ERREUR: {e}")
             self.db.logger.log_error(f"Erreur modification api key: {e}")
             return False, str(e)

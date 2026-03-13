@@ -160,7 +160,8 @@ class ExchangeModel:
             exchange_id = self.db.cursor.lastrowid
             
             self.db.logger.log_query(f"Exchange créée: {display_name} (ID: {exchange_id}, User: {account_id})")
-            
+            self.db.log_activity(account_id, 'PLATFORM_ADDED', f"Plateforme ajoutée : {display_name}")
+
             return True, "Plateforme créée avec succès", exchange_id
             
         except Exception as e:

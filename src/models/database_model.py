@@ -4,11 +4,13 @@ from src.utils.db_logger import DbLogger
 
 class DatabaseModel:
     """Gestion de la connexion et initialisation de la base de données SQLite"""
-    
+
+    _activity_logs_ready = False
+
     def __init__(self, db_path="datas/cointrader.db"):
         """
         Initialise la connexion à la base de données
-        
+
         Args:
             db_path (str): Chemin vers le fichier de base de données
         """
@@ -16,11 +18,68 @@ class DatabaseModel:
         self.connection = None
         self.cursor = None
         self.logger = DbLogger()
-        
+
+        is_new = not os.path.exists(db_path)
         os.makedirs(os.path.dirname(db_path), exist_ok=True)
-        
+
         self._connect()
-    
+        if is_new:
+            self.init_database()
+        self._ensure_activity_logs_table()
+
+    def _ensure_activity_logs_table(self):
+        """Crée la table activity_logs si elle n'existe pas (une seule fois par session)"""
+        if DatabaseModel._activity_logs_ready:
+            return
+        try:
+            self.cursor.execute("""
+                CREATE TABLE IF NOT EXISTS activity_logs (
+                    log_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    fk_account_id INTEGER NOT NULL,
+                    action_type TEXT NOT NULL,
+                    description TEXT NOT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (fk_account_id) REFERENCES accounts(account_id) ON DELETE CASCADE
+                )
+            """)
+            self.connection.commit()
+            DatabaseModel._activity_logs_ready = True
+        except Exception as e:
+            self.logger.log_error(f"Erreur création table activity_logs: {e}")
+
+    def log_activity(self, account_id, action_type, description):
+        """Enregistre une action utilisateur dans activity_logs"""
+        try:
+            self.cursor.execute(
+                "INSERT INTO activity_logs (fk_account_id, action_type, description) VALUES (?, ?, ?)",
+                (account_id, action_type, description)
+            )
+            self.connection.commit()
+        except Exception as e:
+            self.logger.log_error(f"Erreur log_activity: {e}")
+
+    def get_activity_logs(self, account_id, action_type=None):
+        """Récupère les logs d'activité d'un utilisateur, avec filtre optionnel"""
+        try:
+            where = "WHERE fk_account_id = ?"
+            params = [account_id]
+            if action_type:
+                where += " AND action_type = ?"
+                params.append(action_type)
+            self.cursor.execute(
+                f"SELECT log_id, action_type, description, created_at FROM activity_logs "
+                f"{where} ORDER BY created_at DESC",
+                tuple(params)
+            )
+            rows = self.cursor.fetchall()
+            return [
+                {"log_id": r[0], "action_type": r[1], "description": r[2], "created_at": r[3]}
+                for r in rows
+            ]
+        except Exception as e:
+            self.logger.log_error(f"Erreur get_activity_logs: {e}")
+            return []
+
     def _connect(self):
         """Établit la connexion à la base de données"""
         try:
